@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export const CallToAction=()=> <section className="home-closing"><p className="studio-kicker">THE NEXT GOOD IDEA COULD START HERE</p><h2>Bring a question.<br/><em>Let’s see where it goes.</em></h2><div className="studio-actions"><Link href="/contact" className="studio-button">Start a conversation ↗</Link><Link href="/about" className="studio-text-link">Get to know WEBSPACEAI ↗</Link></div></section>;

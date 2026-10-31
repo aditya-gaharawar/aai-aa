@@ -1,0 +1,669 @@
+{
+  "/os": {
+    "title": "ResearchOS — A space for ideas | WEBSPACEAI",
+    "description": "An optional browser-local research desktop. Arrange articles, notes, radio, maps, and lab experiments in your own workspace.",
+    "noindex": true,
+    "image": "/social/os.jpg",
+    "imageAlt": "WEBSPACEAI — ResearchOS — A space for ideas",
+    "section": "WEBSPACEAI"
+  },
+  "/": {
+    "title": "WEBSPACEAI — Useful intelligence. Room for curiosity.",
+    "description": "Explore WEBSPACEAI research, interactive experiments, and the ideas behind useful, responsible AI.",
+    "noindex": false,
+    "cardTitle": "Useful intelligence.\nRoom for curiosity.",
+    "image": "/social/home.jpg",
+    "imageAlt": "WEBSPACEAI — Useful intelligence. Room for curiosity.",
+    "section": "WEBSPACEAI"
+  },
+  "/contact": {
+    "title": "Let’s talk | WEBSPACEAI",
+    "description": "Find the right WEBSPACEAI contact for research, enterprise access, privacy, accessibility, and safety.",
+    "noindex": false,
+    "image": "/social/contact.jpg",
+    "imageAlt": "WEBSPACEAI — Let’s talk",
+    "section": "WEBSPACEAI"
+  },
+  "/observatory": {
+    "title": "Your Personal Observatory | WEBSPACEAI",
+    "description": "An opt-in, browser-local constellation of the research and experiments you explore.",
+    "noindex": true,
+    "image": "/social/observatory.jpg",
+    "imageAlt": "WEBSPACEAI — Your Personal Observatory",
+    "section": "WEBSPACEAI"
+  },
+  "/library": {
+    "title": "The Quiet Library | WEBSPACEAI",
+    "description": "A calm reading space with side-by-side research articles, exact-passage highlights, and local margin notes.",
+    "noindex": true,
+    "image": "/social/library.jpg",
+    "imageAlt": "WEBSPACEAI — The Quiet Library",
+    "section": "WEBSPACEAI"
+  },
+  "/products": {
+    "title": "Products & possibilities | WEBSPACEAI",
+    "description": "Explore WEBSPACEAI’s assistant and team product directions, then speak with the team about availability.",
+    "noindex": false,
+    "image": "/social/products.jpg",
+    "imageAlt": "WEBSPACEAI — Products & possibilities",
+    "section": "WEBSPACEAI"
+  },
+  "/reading-list": {
+    "title": "Your reading list | WEBSPACEAI",
+    "description": "A quiet place for the stories you want to return to.",
+    "noindex": true,
+    "image": "/social/reading-list.jpg",
+    "imageAlt": "WEBSPACEAI — Your reading list",
+    "section": "WEBSPACEAI"
+  },
+  "/about": {
+    "title": "About | WEBSPACEAI",
+    "description": "Useful intelligence, thoughtful systems, and room for curiosity. Get to know WEBSPACEAI.",
+    "noindex": false,
+    "image": "/social/about.jpg",
+    "imageAlt": "WEBSPACEAI — About",
+    "section": "WEBSPACEAI"
+  },
+  "/safety": {
+    "title": "AI Safety Framework | WEBSPACEAI",
+    "description": "A scalable framework for managing AI safety risks.",
+    "noindex": false,
+    "image": "/social/safety.jpg",
+    "imageAlt": "WEBSPACEAI — AI Safety Framework",
+    "section": "Trust & responsibility"
+  },
+  "/404": {
+    "title": "Lost, then found. | WEBSPACEAI",
+    "description": "This page is missing. Find your way home in Lost Signal, a tiny exploration game.",
+    "noindex": true,
+    "image": "/social/404.jpg",
+    "imageAlt": "WEBSPACEAI — Lost, then found.",
+    "section": "WEBSPACEAI"
+  },
+  "/soon": {
+    "title": "Coming Soon | WEBSPACEAI",
+    "description": "Explore the research journal or contact WEBSPACEAI about product availability.",
+    "noindex": true,
+    "image": "/social/soon.jpg",
+    "imageAlt": "WEBSPACEAI — Coming Soon",
+    "section": "WEBSPACEAI"
+  },
+  "/trust": {
+    "title": "Trust Center | WEBSPACEAI",
+    "description": "Explore WEBSPACEAI’s published policies on privacy, AI safety, governance, accessibility, and responsible use in the Trust Center.",
+    "noindex": false,
+    "image": "/social/trust.jpg",
+    "imageAlt": "WEBSPACEAI — Trust Center",
+    "section": "Trust & responsibility"
+  },
+  "/lab/lost-signal": {
+    "title": "Lost Signal — a tiny exploration game | WEBSPACEAI",
+    "description": "Recover three fragments and reconnect a lost signal. A quiet game for curious people, with keyboard and touch controls.",
+    "noindex": false,
+    "image": "/social/lab--lost-signal.jpg",
+    "imageAlt": "WEBSPACEAI — Lost Signal — a tiny exploration game",
+    "section": "Curiosity Lab"
+  },
+  "/lab/constellation": {
+    "title": "Research Constellation | WEBSPACEAI",
+    "description": "Follow connections between agents, memory, robotics, evidence, safety, and governance in an interactive research map.",
+    "noindex": false,
+    "image": "/social/lab--constellation.jpg",
+    "imageAlt": "WEBSPACEAI — Research Constellation",
+    "section": "Curiosity Lab"
+  },
+  "/lab": {
+    "title": "The Curiosity Lab | WEBSPACEAI",
+    "description": "An expanding collection of interactive research maps, evidence games, agent simulations, a signal radio, and tools for curious minds.",
+    "noindex": false,
+    "image": "/social/lab.jpg",
+    "imageAlt": "WEBSPACEAI — The Curiosity Lab",
+    "section": "Curiosity Lab"
+  },
+  "/lab/hidden-frequency": {
+    "title": "The Hidden Frequency | WEBSPACEAI",
+    "description": "An optional discovery trail through five corners of WEBSPACEAI. Recover a signal and unlock a little something extra.",
+    "noindex": false,
+    "image": "/social/lab--hidden-frequency.jpg",
+    "imageAlt": "WEBSPACEAI — The Hidden Frequency",
+    "section": "Curiosity Lab"
+  },
+  "/lab/hallucination-room": {
+    "title": "The Hallucination Room | WEBSPACEAI",
+    "description": "Inspect the evidence. Catch the unsupported claim. Six small investigations into AI, confidence, and reasoning.",
+    "noindex": false,
+    "image": "/social/lab--hallucination-room.jpg",
+    "imageAlt": "WEBSPACEAI — The Hallucination Room",
+    "section": "Curiosity Lab"
+  },
+  "/lab/article-assistant": {
+    "title": "Ask the Article | WEBSPACEAI",
+    "description": "Ask a question, inspect exact passages, and follow the references in WEBSPACEAI research articles.",
+    "noindex": false,
+    "image": "/social/lab--article-assistant.jpg",
+    "imageAlt": "WEBSPACEAI — Ask the Article",
+    "section": "Curiosity Lab"
+  },
+  "/lab/tiny-brain": {
+    "title": "Build a Tiny Brain | WEBSPACEAI",
+    "description": "Connect perception, memory, planning, safety, tools and output. Watch a small simulated agent respond to different challenges.",
+    "noindex": false,
+    "image": "/social/lab--tiny-brain.jpg",
+    "imageAlt": "WEBSPACEAI — Build a Tiny Brain",
+    "section": "Curiosity Lab"
+  },
+  "/lab/unanswered-room": {
+    "title": "The Unanswered Room | WEBSPACEAI",
+    "description": "A branching interactive fiction about evidence, permission, and the questions an AI system should leave open.",
+    "noindex": false,
+    "image": "/social/lab--unanswered-room.jpg",
+    "imageAlt": "WEBSPACEAI — The Unanswered Room",
+    "section": "Curiosity Lab"
+  },
+  "/lab/time-machine": {
+    "title": "Research Time Machine | WEBSPACEAI",
+    "description": "Travel through eight selected AI research milestones. Read primary papers, inspect their limits, and compare the questions they leave open.",
+    "noindex": false,
+    "image": "/social/lab--time-machine.jpg",
+    "imageAlt": "WEBSPACEAI — Research Time Machine",
+    "section": "Curiosity Lab"
+  },
+  "/blog": {
+    "title": "Research & Newsroom | WEBSPACEAI",
+    "description": "In-depth AI research analyses and company explainers, with primary sources, worked calculations, and testable proposals.",
+    "noindex": false,
+    "cardTitle": "Ideas. Evidence.\nPossibilities.",
+    "image": "/social/blog.jpg",
+    "imageAlt": "WEBSPACEAI — Ideas. Evidence. Possibilities.",
+    "section": "WEBSPACEAI"
+  },
+  "/trust/policies": {
+    "title": "Policy Directory | WEBSPACEAI Trust Center",
+    "description": "Browse all 40 WEBSPACEAI policies — search, filter by category, and explore the full cross-reference index.",
+    "noindex": false,
+    "image": "/social/trust--policies.jpg",
+    "imageAlt": "WEBSPACEAI — Policy Directory",
+    "section": "Trust & responsibility"
+  },
+  "/lab/radio": {
+    "title": "Signal Radio | WEBSPACEAI",
+    "description": "Tune an imaginary radio to find editorial transmissions and a hidden carrier.",
+    "noindex": false,
+    "image": "/social/lab--radio.jpg",
+    "imageAlt": "WEBSPACEAI — Signal Radio",
+    "section": "Curiosity Lab"
+  },
+  "/desk": {
+    "title": "Your Research Desk | WEBSPACEAI",
+    "description": "Organize saved articles into collections, take notes, and export or import your desk.",
+    "noindex": true,
+    "image": "/social/desk.jpg",
+    "imageAlt": "WEBSPACEAI — Your Research Desk",
+    "section": "WEBSPACEAI"
+  },
+  "/trust/policies/01-privacy-policy": {
+    "title": "Privacy Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Privacy Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--01-privacy-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Privacy Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/02-terms-of-service": {
+    "title": "Terms of Service | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Terms of Service: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--02-terms-of-service.jpg",
+    "imageAlt": "WEBSPACEAI — Terms of Service",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/03-acceptable-use-policy": {
+    "title": "Acceptable Use Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Acceptable Use Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--03-acceptable-use-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Acceptable Use Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/04-cookie-policy": {
+    "title": "Cookie Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Cookie Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--04-cookie-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Cookie Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/05-copyright-ip-policy": {
+    "title": "Copyright & Intellectual Property Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Copyright & Intellectual Property Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--05-copyright-ip-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Copyright & Intellectual Property Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/06-data-processing-addendum": {
+    "title": "Data Processing Addendum (DPA) | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Data Processing Addendum (DPA): the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--06-data-processing-addendum.jpg",
+    "imageAlt": "WEBSPACEAI — Data Processing Addendum (DPA)",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/07-data-retention-deletion-policy": {
+    "title": "Data Retention & Deletion Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Data Retention & Deletion Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--07-data-retention-deletion-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Data Retention & Deletion Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/08-responsible-ai-policy": {
+    "title": "Responsible AI Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Responsible AI Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--08-responsible-ai-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Responsible AI Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/09-ai-usage-policy": {
+    "title": "AI Usage Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s AI Usage Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--09-ai-usage-policy.jpg",
+    "imageAlt": "WEBSPACEAI — AI Usage Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/10-content-policy": {
+    "title": "Content Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Content Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--10-content-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Content Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/11-security-policy": {
+    "title": "Security Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Security Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--11-security-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Security Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/12-abuse-reporting-policy": {
+    "title": "Abuse Reporting Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Abuse Reporting Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--12-abuse-reporting-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Abuse Reporting Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/13-accessibility-statement": {
+    "title": "Accessibility Statement | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Accessibility Statement: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--13-accessibility-statement.jpg",
+    "imageAlt": "WEBSPACEAI — Accessibility Statement",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/14-vulnerability-disclosure-policy": {
+    "title": "Vulnerability Disclosure Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Vulnerability Disclosure Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--14-vulnerability-disclosure-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Vulnerability Disclosure Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/15-bug-bounty-program-policy": {
+    "title": "Bug Bounty Program Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Bug Bounty Program Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--15-bug-bounty-program-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Bug Bounty Program Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/16-model-release-policy": {
+    "title": "Model Release Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Model Release Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--16-model-release-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Model Release Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/17-safety-evaluation-policy": {
+    "title": "Safety Evaluation Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Safety Evaluation Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--17-safety-evaluation-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Safety Evaluation Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/18-red-teaming-policy": {
+    "title": "Red Teaming Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Red Teaming Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--18-red-teaming-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Red Teaming Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/19-prompt-injection-security-policy": {
+    "title": "Prompt Injection Security Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Prompt Injection Security Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--19-prompt-injection-security-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Prompt Injection Security Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/20-autonomous-agent-policy": {
+    "title": "Autonomous Agent Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Autonomous Agent Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--20-autonomous-agent-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Autonomous Agent Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/21-synthetic-media-policy": {
+    "title": "Synthetic Media Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Synthetic Media Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--21-synthetic-media-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Synthetic Media Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/22-hallucination-disclosure-policy": {
+    "title": "Hallucination Disclosure Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Hallucination Disclosure Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--22-hallucination-disclosure-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Hallucination Disclosure Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/23-human-oversight-policy": {
+    "title": "Human Oversight Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Human Oversight Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--23-human-oversight-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Human Oversight Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/24-ai-safety-framework": {
+    "title": "AI Safety Framework | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s AI Safety Framework: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--24-ai-safety-framework.jpg",
+    "imageAlt": "WEBSPACEAI — AI Safety Framework",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/25-model-retirement-policy": {
+    "title": "Model Retirement Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Model Retirement Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--25-model-retirement-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Model Retirement Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/26-research-ethics-policy": {
+    "title": "Research Ethics Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Research Ethics Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--26-research-ethics-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Research Ethics Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/27-benchmark-methodology-policy": {
+    "title": "Benchmark Methodology Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Benchmark Methodology Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--27-benchmark-methodology-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Benchmark Methodology Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/28-evaluation-framework-policy": {
+    "title": "Evaluation Framework Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Evaluation Framework Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--28-evaluation-framework-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Evaluation Framework Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/29-transparency-report-framework": {
+    "title": "Transparency Report Framework | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Transparency Report Framework: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--29-transparency-report-framework.jpg",
+    "imageAlt": "WEBSPACEAI — Transparency Report Framework",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/30-model-card-template": {
+    "title": "Model Card Template | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Model Card Template: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--30-model-card-template.jpg",
+    "imageAlt": "WEBSPACEAI — Model Card Template",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/31-system-card-template": {
+    "title": "System Card Template | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s System Card Template: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--31-system-card-template.jpg",
+    "imageAlt": "WEBSPACEAI — System Card Template",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/32-safety-report-template": {
+    "title": "Safety Report Template | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Safety Report Template: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--32-safety-report-template.jpg",
+    "imageAlt": "WEBSPACEAI — Safety Report Template",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/33-incident-disclosure-policy": {
+    "title": "Incident Disclosure Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Incident Disclosure Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--33-incident-disclosure-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Incident Disclosure Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/35-security-compliance-overview": {
+    "title": "Security & Compliance Overview | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Security & Compliance Overview: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--35-security-compliance-overview.jpg",
+    "imageAlt": "WEBSPACEAI — Security & Compliance Overview",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/36-government-request-policy": {
+    "title": "Government Request Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Government Request Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--36-government-request-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Government Request Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/37-enterprise-security-overview": {
+    "title": "Enterprise Security Overview | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Enterprise Security Overview: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--37-enterprise-security-overview.jpg",
+    "imageAlt": "WEBSPACEAI — Enterprise Security Overview",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/38-multimodal-risk-policy": {
+    "title": "Multimodal Risk Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Multimodal Risk Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--38-multimodal-risk-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Multimodal Risk Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/39-environmental-sustainability-policy": {
+    "title": "Environmental Sustainability Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Environmental Sustainability Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--39-environmental-sustainability-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Environmental Sustainability Policy",
+    "section": "Trust & responsibility"
+  },
+  "/trust/policies/40-training-data-provenance-supply-chain-policy": {
+    "title": "Training Data Provenance & Supply Chain Policy | WEBSPACEAI Trust Center",
+    "description": "Read WEBSPACEAI’s Training Data Provenance & Supply Chain Policy: the principles, responsibilities, and requirements in our published policy suite.",
+    "noindex": false,
+    "image": "/social/trust--policies--40-training-data-provenance-supply-chain-policy.jpg",
+    "imageAlt": "WEBSPACEAI — Training Data Provenance & Supply Chain Policy",
+    "section": "Trust & responsibility"
+  },
+  "/blog/grpo-efficiency-beyond-the-kernel": {
+    "title": "GRPO efficiency starts before the kernel | WEBSPACEAI",
+    "description": "A practical investigation of sparse rewards, loss normalization, and what a faster training step actually proves.",
+    "cardTitle": "GRPO efficiency starts before the kernel",
+    "noindex": false,
+    "article": {
+      "title": "GRPO efficiency starts before the kernel",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Training",
+      "art": "interpretability",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--grpo-efficiency-beyond-the-kernel.jpg",
+    "imageAlt": "WEBSPACEAI — GRPO efficiency starts before the kernel",
+    "section": "Journal / Training"
+  },
+  "/blog/coding-agents-beyond-a-leaderboard": {
+    "title": "A coding agent is a system, not a score | WEBSPACEAI",
+    "description": "How to compare coding agents without confusing model quality, scaffolding, test contamination, and retry budget.",
+    "cardTitle": "A coding agent is a system, not a score",
+    "noindex": false,
+    "article": {
+      "title": "A coding agent is a system, not a score",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Agents",
+      "art": "one",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--coding-agents-beyond-a-leaderboard.jpg",
+    "imageAlt": "WEBSPACEAI — A coding agent is a system, not a score",
+    "section": "Journal / Agents"
+  },
+  "/blog/robot-foundation-models-data-contract": {
+    "title": "Robot foundation models need a data contract | WEBSPACEAI",
+    "description": "What GR00T and π₀ teach us about the gap between a general model and a reliable policy on a particular robot.",
+    "cardTitle": "Robot foundation models need a data contract",
+    "noindex": false,
+    "article": {
+      "title": "Robot foundation models need a data contract",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Robotics",
+      "art": "alignment",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--robot-foundation-models-data-contract.jpg",
+    "imageAlt": "WEBSPACEAI — Robot foundation models need a data contract",
+    "section": "Journal / Robotics"
+  },
+  "/blog/gps-denied-semantic-mapping": {
+    "title": "A map should know what it does not know | WEBSPACEAI",
+    "description": "A proposed architecture for LiDAR–camera mapping that keeps geometric confidence separate from semantic guesses.",
+    "cardTitle": "A map should know what it does not know",
+    "noindex": false,
+    "article": {
+      "title": "A map should know what it does not know",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Spatial AI",
+      "art": "multimodal",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--gps-denied-semantic-mapping.jpg",
+    "imageAlt": "WEBSPACEAI — A map should know what it does not know",
+    "section": "Journal / Spatial AI"
+  },
+  "/blog/rag-evidence-before-confidence": {
+    "title": "RAG should earn the right to answer | WEBSPACEAI",
+    "description": "A claim-level design for retrieval, contradiction handling, citations, and useful abstention.",
+    "cardTitle": "RAG should earn the right to answer",
+    "noindex": false,
+    "article": {
+      "title": "RAG should earn the right to answer",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Retrieval",
+      "art": "assistant",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--rag-evidence-before-confidence.jpg",
+    "imageAlt": "WEBSPACEAI — RAG should earn the right to answer",
+    "section": "Journal / Retrieval"
+  },
+  "/blog/prompt-injection-permission-boundaries": {
+    "title": "Prompt injection is a permission problem too | WEBSPACEAI",
+    "description": "Why an agent’s ability to read a document should not grant that document authority to authorize an action.",
+    "cardTitle": "Prompt injection is a permission problem too",
+    "noindex": false,
+    "article": {
+      "title": "Prompt injection is a permission problem too",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Safety",
+      "art": "safety",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--prompt-injection-permission-boundaries.jpg",
+    "imageAlt": "WEBSPACEAI — Prompt injection is a permission problem too",
+    "section": "Journal / Safety"
+  },
+  "/blog/long-context-memory-budget": {
+    "title": "Long context has a memory budget | WEBSPACEAI",
+    "description": "A worked KV-cache calculation, and why FlashAttention, GQA, and PagedAttention solve different problems.",
+    "cardTitle": "Long context has a memory budget",
+    "noindex": false,
+    "article": {
+      "title": "Long context has a memory budget",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Research Desk",
+      "category": "Systems",
+      "art": "policies",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--long-context-memory-budget.jpg",
+    "imageAlt": "WEBSPACEAI — Long context has a memory budget",
+    "section": "Journal / Systems"
+  },
+  "/blog/inside-the-webspaceai-trust-center": {
+    "title": "Inside the WEBSPACEAI Trust Center | WEBSPACEAI",
+    "description": "A reader’s guide to the policy directory, its cross-references, and the questions the documents are intended to answer.",
+    "cardTitle": "Inside the WEBSPACEAI Trust Center",
+    "noindex": false,
+    "article": {
+      "title": "Inside the WEBSPACEAI Trust Center",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Editorial",
+      "category": "Company",
+      "art": "policies",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--inside-the-webspaceai-trust-center.jpg",
+    "imageAlt": "WEBSPACEAI — Inside the WEBSPACEAI Trust Center",
+    "section": "Journal / Company"
+  },
+  "/blog/how-our-safety-risk-levels-work": {
+    "title": "How our safety risk levels work | WEBSPACEAI",
+    "description": "The published AI Safety Framework describes four risk levels. Here is how to read the escalation and release controls without confusing a policy with a test result.",
+    "cardTitle": "How our safety risk levels work",
+    "noindex": false,
+    "article": {
+      "title": "How our safety risk levels work",
+      "date": "2026-10-20",
+      "author": "WEBSPACEAI Editorial",
+      "category": "Company",
+      "art": "framework",
+      "readingMinutes": 3
+    },
+    "image": "/social/blog--how-our-safety-risk-levels-work.jpg",
+    "imageAlt": "WEBSPACEAI — How our safety risk levels work",
+    "section": "Journal / Company"
+  }
+}

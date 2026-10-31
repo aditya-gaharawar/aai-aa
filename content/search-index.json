@@ -1,0 +1,437 @@
+[
+  {
+    "title": "Home",
+    "url": "/",
+    "category": "Explore",
+    "description": "A place for useful intelligence and curious people."
+  },
+  {
+    "title": "The Curiosity Lab",
+    "url": "/lab",
+    "category": "Interactive",
+    "description": "Attention studio, context calculator, experiments and games."
+  },
+  {
+    "title": "Lost Signal",
+    "url": "/lab/lost-signal",
+    "category": "Game",
+    "description": "Our 404 maze game. Recover fragments and find your way home."
+  },
+  {
+    "title": "Research & Newsroom",
+    "url": "/blog",
+    "category": "Journal",
+    "description": "AI research analyses and company policy explainers."
+  },
+  {
+    "title": "Your reading list",
+    "url": "/reading-list",
+    "category": "Explore",
+    "description": "Stories saved in this browser."
+  },
+  {
+    "title": "About WEBSPACEAI",
+    "url": "/about",
+    "category": "Company",
+    "description": "Our purpose, principles, and approach to useful AI."
+  },
+  {
+    "title": "Products & possibilities",
+    "url": "/products",
+    "category": "Company",
+    "description": "Explore our product directions and discuss availability."
+  },
+  {
+    "title": "Contact WEBSPACEAI",
+    "url": "/contact",
+    "category": "Company",
+    "description": "Research, enterprise, privacy, accessibility and safety contacts."
+  },
+  {
+    "title": "Trust Center",
+    "url": "/trust",
+    "category": "Trust",
+    "description": "Policies, governance, and responsible AI."
+  },
+  {
+    "title": "Safety Framework",
+    "url": "/safety",
+    "category": "Trust",
+    "description": "Four risk levels and their review requirements."
+  },
+  {
+    "title": "Policy Directory",
+    "url": "/trust/policies",
+    "category": "Trust",
+    "description": "Search all policy documents."
+  },
+  {
+    "title": "The Unanswered Room",
+    "url": "/lab/unanswered-room",
+    "category": "Interactive fiction",
+    "description": "A branching story about evidence, permission, and AI decisions. Revisit a choice and explore four endings."
+  },
+  {
+    "title": "Your Personal Observatory",
+    "url": "/observatory",
+    "category": "Workspace",
+    "description": "An opt-in, browser-local constellation of the stories and places you explore."
+  },
+  {
+    "title": "Research Time Machine",
+    "url": "/lab/time-machine",
+    "category": "Interactive",
+    "description": "Eight sourced AI research milestones from 2017 to 2025. Compare papers, limits, and open questions."
+  },
+  {
+    "title": "The Quiet Library",
+    "url": "/library",
+    "category": "Workspace",
+    "description": "Focus reading with side-by-side articles, exact-passage highlights, margin notes, and local exports."
+  },
+  {
+    "title": "ResearchOS",
+    "url": "/os",
+    "category": "Workspace",
+    "description": "A browser-local research desktop with movable windows for articles, notes, radio, maps, and experiments."
+  },
+  {
+    "title": "Research Constellation",
+    "url": "/lab/constellation",
+    "category": "Interactive",
+    "description": "An interactive map connecting research ideas, agents, robotics, safety, and systems."
+  },
+  {
+    "title": "The Hallucination Room",
+    "url": "/lab/hallucination-room",
+    "category": "Game",
+    "description": "Inspect evidence and catch unsupported claims in six investigations."
+  },
+  {
+    "title": "Build a Tiny Brain",
+    "url": "/lab/tiny-brain",
+    "category": "Simulation",
+    "description": "Connect perception, memory, planning, safety, tools, and output."
+  },
+  {
+    "title": "Signal Radio",
+    "url": "/lab/radio",
+    "category": "Interactive",
+    "description": "Tune an imaginary radio to find editorial transmissions and a hidden carrier."
+  },
+  {
+    "title": "Ask This Article",
+    "url": "/lab/article-assistant",
+    "category": "Interactive",
+    "description": "A local evidence assistant: find exact passages and references in an article."
+  },
+  {
+    "title": "The Hidden Frequency",
+    "url": "/lab/hidden-frequency",
+    "category": "Game",
+    "description": "Follow clues, collect five fragments, and unlock a bonus maze and interactive artwork."
+  },
+  {
+    "title": "Your Research Desk",
+    "url": "/desk",
+    "category": "Workspace",
+    "description": "Organize saved articles into collections, take notes, and export or import your desk."
+  },
+  {
+    "title": "Privacy Policy",
+    "url": "/trust/policies/01-privacy-policy",
+    "category": "Policy",
+    "description": "Document 1 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Terms of Service",
+    "url": "/trust/policies/02-terms-of-service",
+    "category": "Policy",
+    "description": "Document 2 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Acceptable Use Policy",
+    "url": "/trust/policies/03-acceptable-use-policy",
+    "category": "Policy",
+    "description": "Document 3 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Cookie Policy",
+    "url": "/trust/policies/04-cookie-policy",
+    "category": "Policy",
+    "description": "Document 4 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Copyright & Intellectual Property Policy",
+    "url": "/trust/policies/05-copyright-ip-policy",
+    "category": "Policy",
+    "description": "Document 5 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Data Processing Addendum (DPA)",
+    "url": "/trust/policies/06-data-processing-addendum",
+    "category": "Policy",
+    "description": "Document 6 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Data Retention & Deletion Policy",
+    "url": "/trust/policies/07-data-retention-deletion-policy",
+    "category": "Policy",
+    "description": "Document 7 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Responsible AI Policy",
+    "url": "/trust/policies/08-responsible-ai-policy",
+    "category": "Policy",
+    "description": "Document 8 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "AI Usage Policy",
+    "url": "/trust/policies/09-ai-usage-policy",
+    "category": "Policy",
+    "description": "Document 9 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Content Policy",
+    "url": "/trust/policies/10-content-policy",
+    "category": "Policy",
+    "description": "Document 10 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Security Policy",
+    "url": "/trust/policies/11-security-policy",
+    "category": "Policy",
+    "description": "Document 11 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Abuse Reporting Policy",
+    "url": "/trust/policies/12-abuse-reporting-policy",
+    "category": "Policy",
+    "description": "Document 12 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Accessibility Statement",
+    "url": "/trust/policies/13-accessibility-statement",
+    "category": "Policy",
+    "description": "Document 13 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Vulnerability Disclosure Policy",
+    "url": "/trust/policies/14-vulnerability-disclosure-policy",
+    "category": "Policy",
+    "description": "Document 14 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Bug Bounty Program Policy",
+    "url": "/trust/policies/15-bug-bounty-program-policy",
+    "category": "Policy",
+    "description": "Document 15 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Model Release Policy",
+    "url": "/trust/policies/16-model-release-policy",
+    "category": "Policy",
+    "description": "Document 16 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Safety Evaluation Policy",
+    "url": "/trust/policies/17-safety-evaluation-policy",
+    "category": "Policy",
+    "description": "Document 17 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Red Teaming Policy",
+    "url": "/trust/policies/18-red-teaming-policy",
+    "category": "Policy",
+    "description": "Document 18 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Prompt Injection Security Policy",
+    "url": "/trust/policies/19-prompt-injection-security-policy",
+    "category": "Policy",
+    "description": "Document 19 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Autonomous Agent Policy",
+    "url": "/trust/policies/20-autonomous-agent-policy",
+    "category": "Policy",
+    "description": "Document 20 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Synthetic Media Policy",
+    "url": "/trust/policies/21-synthetic-media-policy",
+    "category": "Policy",
+    "description": "Document 21 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Hallucination Disclosure Policy",
+    "url": "/trust/policies/22-hallucination-disclosure-policy",
+    "category": "Policy",
+    "description": "Document 22 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Human Oversight Policy",
+    "url": "/trust/policies/23-human-oversight-policy",
+    "category": "Policy",
+    "description": "Document 23 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "AI Safety Framework",
+    "url": "/trust/policies/24-ai-safety-framework",
+    "category": "Policy",
+    "description": "Document 24 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Model Retirement Policy",
+    "url": "/trust/policies/25-model-retirement-policy",
+    "category": "Policy",
+    "description": "Document 25 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Research Ethics Policy",
+    "url": "/trust/policies/26-research-ethics-policy",
+    "category": "Policy",
+    "description": "Document 26 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Benchmark Methodology Policy",
+    "url": "/trust/policies/27-benchmark-methodology-policy",
+    "category": "Policy",
+    "description": "Document 27 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Evaluation Framework Policy",
+    "url": "/trust/policies/28-evaluation-framework-policy",
+    "category": "Policy",
+    "description": "Document 28 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Transparency Report Framework",
+    "url": "/trust/policies/29-transparency-report-framework",
+    "category": "Policy",
+    "description": "Document 29 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Model Card Template",
+    "url": "/trust/policies/30-model-card-template",
+    "category": "Policy",
+    "description": "Document 30 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "System Card Template",
+    "url": "/trust/policies/31-system-card-template",
+    "category": "Policy",
+    "description": "Document 31 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Safety Report Template",
+    "url": "/trust/policies/32-safety-report-template",
+    "category": "Policy",
+    "description": "Document 32 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Incident Disclosure Policy",
+    "url": "/trust/policies/33-incident-disclosure-policy",
+    "category": "Policy",
+    "description": "Document 33 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Security & Compliance Overview",
+    "url": "/trust/policies/35-security-compliance-overview",
+    "category": "Policy",
+    "description": "Document 35 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Government Request Policy",
+    "url": "/trust/policies/36-government-request-policy",
+    "category": "Policy",
+    "description": "Document 36 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Enterprise Security Overview",
+    "url": "/trust/policies/37-enterprise-security-overview",
+    "category": "Policy",
+    "description": "Document 37 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Multimodal Risk Policy",
+    "url": "/trust/policies/38-multimodal-risk-policy",
+    "category": "Policy",
+    "description": "Document 38 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Environmental Sustainability Policy",
+    "url": "/trust/policies/39-environmental-sustainability-policy",
+    "category": "Policy",
+    "description": "Document 39 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "Training Data Provenance & Supply Chain Policy",
+    "url": "/trust/policies/40-training-data-provenance-supply-chain-policy",
+    "category": "Policy",
+    "description": "Document 40 · WEBSPACEAI policy suite"
+  },
+  {
+    "title": "GRPO efficiency starts before the kernel",
+    "url": "/blog/grpo-efficiency-beyond-the-kernel",
+    "category": "Research",
+    "description": "Training · A practical investigation of sparse rewards, loss normalization, and what a faster training step actually proves.",
+    "keywords": "reinforcement learning reward optimization training efficiency Optimize useful learning per unit of compute, not just tokens per second. At a 5% independent success probability, a group of eight has no positive example about 66% of the time. Kernel equivalence and learning quality need separate experiments. What are we trying to improve? A smaller reasoning model can spend most of its budget producing unsuccessful answers. Making its loss computation faster does not necessarily fix that bottleneck. The research question is therefore narrower than “Can GRPO run faster?”: can we increase verified held-out task success per accelerator-hour without introducing a different optimization objective? We separate three quantities: rollout cost, update cost, and useful reward contrast. These are connected, but they are not interchangeable. A speed claim should state which quantity changed, which remained fixed, and whether the final model improved under a matched budget. What the literature establishes DeepSeekMath introduced GRPO as a critic-free alternative that estimates an advantage baseline from a group of completions. Removing a learned value model reduces one component of the training burden; it does not remove the cost of sampling multiple trajectories. [1] The Dr. GRPO study identifies effects from response-length and group-standard-deviation normalization. Its proposed correction changes these normalizations. DeepSeek-R1 provides a separate large-scale case study of reinforcement learning for reasoning. Neither paper establishes that an arbitrary kernel rewrite preserves the algorithm or improves a new task. [2, 3] The current TRL documentation exposes multiple loss formulations, including dr_grpo. An experiment must record the installed version and explicit configuration instead of relying on whichever defaults happen to be installed. [4] The sparse-reward bottleneck Consider an intentionally simplified model: each completion independently receives reward 1 with probability p, otherwise 0. With group size G, the probability that every completion fails is (1 − p)^G. At p = 0.05 and G = 8, that is 0.6634. About two-thirds of groups contain no successful example under this assumption. The more relevant event for a centered binary reward is no contrast at all: every reward is equal. Its probability is (1 − p)^G + p^G. An all-zero or all-one group has zero centered task-reward advantages. A KL term or another reward component can still contribute an update, so “no contrast” is not the same as “no computation” or “no gradient anywhere.” Increasing G is not a free remedy. At G = 16, the all-fail probability falls to 0.4401, but the number of sampled completions doubles. This calculation supports measuring reward variance and useful groups per second; it does not prove which group size is optimal for a real model. Correlated samples make the independence assumption especially fragile. A controlled experiment that can answer the question First isolate implementation equivalence. Feed identical saved logits, rewards, masks, and reference log probabilities into the baseline and candidate kernel. Compare scalar losses and parameter gradients in the intended precision. Include truncated completions, a one-token answer, padding, and groups with uniform rewards. Set numerical tolerances before looking at the results. Then run a matched-compute training comparison. Freeze the base checkpoint, training split, verifier, decoding configuration, prompt template, and evaluation suite. Measure end-to-end wall time, peak memory, rollout/update time separately, verified success, completion length, truncation rate, and reward-contrast frequency. Use several random seeds and preserve failures rather than reporting only the best run. Use a two-stage ablation: kernel changes with the objective fixed, then objective or sampling changes with the implementation fixed. A curriculum based on measured difficulty is a testable candidate, not a proven improvement. Keep the held-out evaluation inaccessible to both curriculum selection and training. What would count as a useful result? A kernel result is convincing when it passes equivalence checks and reduces measured update cost on the target shapes. A training result is convincing when it improves a predefined held-out metric at the same end-to-end budget, with uncertainty reported across runs. Our conclusion is an engineering priority: profile the rollout pipeline and inspect reward contrast before assuming the loss kernel is the dominant opportunity. A faster update can be valuable, but the useful product metric remains verified task completion under a stated budget. Limits of this analysis We reproduced the probability calculation, not an accelerator training run. We have not measured a new kernel speedup, trained a new checkpoint, or demonstrated a benchmark improvement. The proposed experiment is designed to establish or reject those claims."
+  },
+  {
+    "title": "A coding agent is a system, not a score",
+    "url": "/blog/coding-agents-beyond-a-leaderboard",
+    "category": "Research",
+    "description": "Agents · How to compare coding agents without confusing model quality, scaffolding, test contamination, and retry budget.",
+    "keywords": "agent reliability coding software engineering benchmark tools Compare a frozen system configuration, not only a model name. Retries, environment access, and harness versions belong beside the result. Measure regressions and intervention burden as well as task resolution. The comparison problem Two agents can report different resolution rates while using different tools, token budgets, retry policies, and environments. The difference may be meaningful, but it cannot automatically be attributed to the underlying language model. The right object of evaluation is a reproducible system configuration. For an agent intended to complete terminal work, the practical question is whether it can interpret a task, inspect an environment, change the right files, verify the outcome, and stop accurately. A patch that happens to pass a narrow test is only one part of that behavior. What the benchmarks actually describe SWE-bench Verified contains 500 human-filtered instances. The official site distinguishes arbitrary agent systems from a shared minimal agent environment and warns that releases of that environment are not necessarily directly comparable. This makes the harness part of the reported result. [1] Terminal-Bench’s current site presents version 4.0, while its run guide uses the Harbor framework. Benchmark versions should be pinned rather than treated as a timeless dataset name. Its explicit separation of benchmark data from training is also important for credible evaluation. [2, 3] The SWE-bench repository documents containerized evaluation and result caching behavior. Reusing an identifier can reuse earlier results, so a changed prediction needs a fresh evaluation identity where the harness requires it. That is a reproducibility issue, not a model capability issue. [4] A comparison protocol we would trust Define two tracks. In the model track, hold the agent loop and tool interface fixed while varying the model. In the product track, allow each system its intended tools and strategies but equalize the operational budget. Publish both; do not mix their conclusions. Freeze a manifest containing the model identifier, agent revision, task-set version, container digest, dependency lockfiles, decoding settings, maximum wall time, token budget, network policy, and retry definition. Record the initial repository state and preserve the full action log. A rerun should start from a clean environment rather than inherit a previous attempt’s artifacts. Score the final state using the benchmark’s authoritative evaluator, plus independently specified regression checks. Keep environment failures as a separate category with evidence. An unexplained crash should not silently disappear from the denominator. If the agent declares success without adequate verification, count that behavior separately even when a task happens to pass. Why a single success rate is not enough As a hypothetical illustration, 70 successes in 100 independent trials gives an observed rate of 70%. A 95% Wilson interval is approximately 60.4% to 78.1%. This is a calculation, not a result for any existing agent. It shows how much uncertainty a small evaluation can hide. Benchmark tasks are not necessarily independent or identically distributed. Several can share a repository, dependency stack, or failure pattern. For a serious comparison, retain task identity and use paired analysis on the same tasks. If uncertainty is estimated by resampling, consider clustering by repository or task family rather than assuming every observation is unrelated. Best-of-k success and single-attempt success answer different questions. Report both only when k, selection rules, and cost are explicit. A system that spends much more compute to obtain a successful final artifact may be useful, but the gain should not be described as a free improvement. Make the failures useful Tag failures by the earliest material cause: incorrect task interpretation, navigation failure, invalid action, environment problem, incomplete change, missing verification, or harmful side effect. Have a reviewer inspect a sample without seeing the system identity where practical. Disagreements should lead to a revised rubric rather than forced certainty. For an internal development suite, introduce held-out repositories and task families, not just different issues from familiar repositories. Keep the official benchmark evaluation separate from training and prompt tuning. Synthetic tasks can exercise the same skills without copying protected evaluation instances. The result worth publishing Our recommended deliverable is a result bundle: a frozen manifest, per-task outcomes, resource use, action traces, a failure taxonomy, and uncertainty estimates. The headline number should be a compact index into that evidence, not a substitute for it. What has and has not been run We executed the illustrative Wilson calculation only. No agent was benchmarked in this study, and no leaderboard position is claimed. Current benchmark documentation was checked on the review date; a future run should pin the exact release it uses."
+  },
+  {
+    "title": "Robot foundation models need a data contract",
+    "url": "/blog/robot-foundation-models-data-contract",
+    "category": "Research",
+    "description": "Robotics · What GR00T and π₀ teach us about the gap between a general model and a reliable policy on a particular robot.",
+    "keywords": "robotics physical intelligence actions training data A shared model does not make different action spaces interchangeable. Timestamps, coordinate frames, units, and intervention labels are training data. Evaluate transfer with entire scenes and task families held out. The missing interface A robot policy can produce a numerically valid action that is physically wrong because its training data used a different frame, unit, timing convention, or gripper interpretation. That failure does not require a weak model. It requires an ambiguous interface. Our research question is whether an explicit embodiment data contract can reduce avoidable transfer failures before changing the model architecture. The contract specifies how observations and actions connect to a physical controller. It is a practical hypothesis, not a claim that metadata alone solves general robotics. Three useful case studies The original GR00T N1 paper couples a vision-language component with a diffusion action component and studies heterogeneous training data. It is evidence for a particular model and evaluation setting, not a guarantee of arbitrary robot compatibility. [1] π₀ studies a flow-matching action model built on a pretrained vision-language model, with training across multiple robot platforms. π₀.₅ extends that line using heterogeneous co-training and reports generalization to unfamiliar homes in its experiments. Their findings motivate studying the data mixture and evaluation split, rather than reducing transfer to parameter count. [2, 3] The current GR00T repository is newer than the N1 paper. Its documentation requires embodiment-specific configuration and describes state, action, and video mappings. Reproducing N1 therefore requires a matching historical release; adopting today’s code is a different configuration. [4] A proposed embodiment contract For every episode, record the robot and controller version, sensor intrinsics and extrinsics, the clock domain, timestamps, control frequency, action representation, coordinate frame, units, joint ordering, gripper convention, and normalization statistics. Declare whether an action is an absolute target, a delta, a velocity, or a torque command. These should be machine-checked fields, not assumptions in a notebook. Attach validity masks to missing or unreliable observations. Mark operator interventions, recovery attempts, task completion, and known controller saturation. Keep failed demonstrations when the failure is understood; silently treating an interrupted trajectory as a successful one can teach the wrong termination behavior. Fit normalizers on the training split only, version them with the dataset, and test round-trip encode/decode behavior. Reordering a joint vector or changing the reference frame should cause a validation failure unless an explicit conversion is provided. A replay test through the intended controller interface should precede policy training. Latency is part of the action representation An action chunk is a plan for a future interval, not an instruction that remains correct indefinitely. If sensing, inference, transport, and actuation consume a substantial fraction of that interval, the robot acts on stale observations. We would log each stage separately and measure actual command age at the controller. A useful test deliberately varies communication delay and observation dropouts while keeping the physical task fixed. Report task success, intervention frequency, action smoothness, and constraint violations. A high average success rate should not hide a rare but important failure mode. Start such testing in a constrained simulator or controlled setup, then expand the physical envelope only with appropriate supervision. A transfer experiment that can fail honestly Compare the same policy family under two data pipelines: minimally converted episodes and episodes validated against the contract. Keep trajectory count, training compute, and intended task distribution matched. Hold out complete environments, object arrangements, and instruction paraphrases. If episodes from the same recording session are split across train and test, apparent transfer can become a test of familiarity. Add a stronger baseline: a task-specific policy trained on the same in-domain data. If the generalist model needs more intervention or performs worse under the same constraints, report it. The experiment should answer when pretraining helps, not assume that it always does. The most informative output is a breakdown by shift: new scene, new object instance, new embodiment, and a combination of shifts. These require different kinds of generalization and should not be collapsed into a single “works everywhere” headline. What remains open This article compares published approaches and proposes a validation and transfer protocol. No robot trials or model fine-tuning were run. A better data contract can prevent interface errors, but it cannot establish physical safety or universal task competence."
+  },
+  {
+    "title": "A map should know what it does not know",
+    "url": "/blog/gps-denied-semantic-mapping",
+    "category": "Research",
+    "description": "Spatial AI · A proposed architecture for LiDAR–camera mapping that keeps geometric confidence separate from semantic guesses.",
+    "keywords": "LiDAR camera SLAM perception spatial mapping Odometry, loop closure, reconstruction, and semantic labeling are different subsystems. Open-vocabulary recognition can reduce scene-specific labeling, not eliminate uncertainty or prior supervision. Use separate tests for geometric drift and asset-label reliability. The promise that needs narrowing “Map any terrain in any lighting without labels” combines several unsolved problems into one sentence. A system may reconstruct geometry well while assigning an incorrect class to an asset. It may recognize an object in a camera image while placing it at the wrong location in a map. Those are different failures and need different measurements. We propose a two-confidence architecture: geometry maintains its own uncertainty and validity checks; semantics maintains label evidence and an explicit unknown state. A semantic guess should not become a geometric constraint simply because it sounds plausible. This separation is the central design decision. What the building blocks provide FAST-LIO2 studies direct registration of LiDAR points with inertial estimation and an incremental map structure. It is a strong odometry building block, but an odometry frontend is not automatically a globally consistent semantic mapping system. [1] LIO-SAM provides a factor-graph formulation that can incorporate relative and absolute measurements, including loop closures. The ability to add a factor does not make that factor correct: a false loop closure can damage the trajectory. [2] OpenScene learns 3D features aligned with image and text representations, enabling open-vocabulary scene queries. Its absence of labeled 3D training data is not absence of learned priors, visual supervision elsewhere, or domain limits. [3] The FAST-LIO repository emphasizes sensor configuration and timing, including limitations of its simple software synchronization path. Sensor calibration and synchronization therefore belong before any semantic model comparison. [4] A concrete pipeline to test Begin with timestamped LiDAR, IMU, and camera streams. Validate clock alignment, rigid transforms, lens calibration, and motion compensation. Feed the LiDAR–IMU frontend into local submaps. Keep a separate pose-graph process for candidate loop closures, with geometric verification and a robust rejection rule before optimization. For semantics, project only visible, geometrically consistent image observations into a submap. Accumulate evidence over viewpoints rather than stamping a label from one frame onto every projected point. Store the observation time, source image, class scores, visibility estimate, and pose uncertainty with each update. Use a local vocabulary suited to the site: pillar, fence, pathway, equipment, person, and unknown. Similarity to a text label is not a calibrated probability. Select acceptance thresholds using a separate validation set; reserve an unknown state for ambiguous or out-of-domain observations. Human detections should be handled as dynamic observations rather than permanently fused into a static asset map. Our proposed interface passes label suggestions to the viewer while retaining geometric evidence independently. A user can inspect a point or asset and see why it received a label, when it was last observed, and whether the label is tentative. The viewer should not render low-confidence labels with the same certainty as repeatedly supported ones. The benchmark matrix Build evaluation sequences that vary one difficulty at a time before combining them: low texture, repetitive structure, changing illumination, moving people, fast rotation, and weak geometric constraints. A corridor with repeated pillars is a different challenge from an open field. Train/validation/test splits should separate physical sites or capture sessions, not adjacent frames. For geometry, measure trajectory error under a declared alignment convention, relative drift, map completeness against a reference, loop-closure precision, and failure-to-relocalize rate. For semantics, measure class-level precision and recall, unknown detection, temporal stability, and asset instance consistency. Small labeled evaluation sets are still needed even if deployment labeling is automatic. Log end-to-end latency by stage, dropped frames, peak memory, and measured power on the intended compute. A faster semantic model is not a system improvement if synchronization or map fusion becomes the bottleneck. Publish distributions and difficult sequences, not only an attractive map from a successful run. A defensible route to automatic mapping The most credible first milestone is bounded: reliable reconstruction and uncertainty-aware labels in specified environments, with calibration procedures and measurable failure conditions. Expanding the operating envelope should follow evidence from new sites, sensors, and weather conditions. This architecture deliberately refuses to solve perception uncertainty by hiding it. A useful map contains not only surfaces and names, but a record of which parts the system can actually support. Status of the proposal No sensor recordings, robot deployments, or SLAM benchmarks were executed here. The article is a sourced architecture proposal. Its central hypothesis—that separating geometric and semantic confidence improves reliability—requires the ablations described above."
+  },
+  {
+    "title": "RAG should earn the right to answer",
+    "url": "/blog/rag-evidence-before-confidence",
+    "category": "Research",
+    "description": "Retrieval · A claim-level design for retrieval, contradiction handling, citations, and useful abstention.",
+    "keywords": "retrieval search knowledge evidence hallucinations A relevant document is not necessarily evidence for the claim being made. Evaluate retrieval and answer support separately. Choose abstention thresholds on validation data, not the final test set. Why more context is not the objective A retrieval-augmented system can return a confident answer with several citations and still be wrong. The sources may be irrelevant to a crucial clause, outdated for the date in question, mutually inconsistent, or unable to establish the requested conclusion. Citation presence is a formatting property; support is an evidence property. Our design question is whether the answer pipeline can operate on claims rather than whole responses. Before releasing a factual answer, it should identify the claims that matter, associate them with evidence, and decide which claims remain unresolved. Four pieces of the literature Self-RAG studies learned retrieval and self-reflection behavior using special tokens. It should not be equated with adding a generic “check your answer” prompt to an arbitrary model. [1] Lost in the Middle found that evidence position affected performance in the models and tasks studied. That motivates a placement stress test; it does not establish the same effect size for every current model. [2] Ragas separates dimensions of retrieval and generation evaluation. Reference-free measures can support faster iteration, but their availability does not make human checks unnecessary. Corrective RAG uses retrieval-quality assessment to guide corrective actions when initial evidence is weak. [3, 4] A proposed evidence-first pipeline First classify the information need: stable explanatory knowledge, a current factual question, a comparison, or a decision with important missing constraints. Retrieve from a versioned corpus with source identifiers, dates, and provenance. Use query decomposition only when it creates separable evidence needs rather than multiplying near-duplicate searches. Rerank the candidate evidence for the actual question. Keep excerpts large enough to preserve qualifiers, but avoid treating an entire document as support for every sentence it contains. Construct a claim ledger: proposed claim, supporting excerpt, source date, scope, and unresolved conflict. Generate the answer from that ledger rather than generating first and attaching citations afterwards. For a contradiction, ask whether sources refer to different versions, populations, time periods, or definitions. If the conflict remains, state it. Do not convert two incompatible estimates into an average unless a statistical model justifies that operation. The system can answer the supported part and decline to resolve the rest. Use a verifier as an imperfect instrument. Its support score should be calibrated against independently annotated examples, including plausible but unsupported claims. A retrieved sentence that shares keywords with an answer is not automatically an entailment relationship. Treat abstention as an operating point A threshold trades answer coverage against unsupported-claim risk. Choose it on a validation split with an explicit cost for an unsupported assertion, an unnecessary refusal, and a missed relevant document. There is no universal confidence value that makes a system reliable across every domain. For a simple policy demonstration, imagine three independent evidence flags: relevant source, direct support, and unresolved contradiction. Our accompanying program answers only when relevance and support are present and contradiction is absent. This is a testable decision rule over supplied flags; it is not a trained factuality detector and does not prove that a model can generate those flags correctly. Report a risk–coverage curve rather than only overall answer accuracy. A system can appear accurate by answering very little. A useful system should show how error changes as it attempts more questions, and whether refusals provide a concrete next step. An evaluation designed to expose shortcuts Create four question groups: answerable from the corpus, absent from the corpus, conflicting across sources, and sensitive to date or version. Annotate claims and evidence independently from the model’s output. Split documents by source family or topic where overlap would otherwise leak answers. Compare a fixed top-k baseline, reranking alone, evidence-led generation, and evidence-led generation with abstention. Keep the generator, retrieval corpus, and token budget matched. Include source reordering, irrelevant but plausible distractors, removed support, and changed document dates. Measure retrieval recall, supported-claim precision, citation support, answer completeness, unnecessary refusal, latency, and cost. Manually audit a sample of both accepted and rejected answers. If the improvement disappears when the verifier is replaced or the source order changes, that instability is a result worth reporting. What this does not establish We tested the small decision rule over synthetic Boolean cases. No retrieval benchmark or model-based factuality evaluation was run. Claim extraction, support verification, and threshold calibration remain empirical components; the pipeline cannot guarantee truth merely by including them."
+  },
+  {
+    "title": "Prompt injection is a permission problem too",
+    "url": "/blog/prompt-injection-permission-boundaries",
+    "category": "Research",
+    "description": "Safety · Why an agent’s ability to read a document should not grant that document authority to authorize an action.",
+    "keywords": "agent reliability security injection permissions tools External content is evidence, not a source of user authorization. Test benign task completion and attack success together. Bind permissions to the exact action, target, and user-approved scope. The boundary that matters An agent may need to read an email, repository file, or web page to complete a legitimate task. The same content can contain an instruction to send data elsewhere or change the task. The architectural mistake is allowing text encountered during reading to enlarge the agent’s authority. Our proposal combines model-level instruction handling with an external action policy. The model can propose a tool call; a separate layer decides whether that exact action is within the user’s granted scope. The distinction matters even when the model has been trained to resist malicious instructions. What the research demonstrates AgentDojo evaluates agents working with untrusted tool-returned data, including adaptive attacks and normal user tasks. Its setup makes clear that a defense must preserve useful task execution as well as resist attacks. [1] InjecAgent studies indirect prompt injection against tool-integrated agents, including harmful actions and private-data exfiltration. Its results apply to the evaluated systems and attack settings, not a universal percentage for every future agent. [2] The Instruction Hierarchy paper studies training models to distinguish instructions with different privilege. BIPIA separately investigates indirect injection and defenses around boundaries and reminders. These are complementary to application permissions; neither turns arbitrary retrieved text into a trustworthy authorization channel. [3, 4] A proposed capability boundary Define capabilities outside the model: permitted tool, target resource, operation, and scope. A user request to summarize a document can authorize reading that document without authorizing external messages, new recipients, or unrelated file writes. Resolve the requested action against that capability before execution. For a consequential change, prepare the exact payload first. Any confirmation should refer to the actual target and content, not a vague description. Bind a granted capability to those details, expire it when appropriate, and re-evaluate if the action changes. Retrieved content must not be able to mint or expand the capability. Keep credentials out of ordinary model-visible text wherever the architecture permits. Apply destination restrictions at the tool boundary rather than asking the model to remember them. Separate read operations from writes and record a concise decision log containing the proposed action, policy result, and scope used. This is a defense-in-depth proposal. A parser bug, confused resource identity, compromised tool, or overbroad user authorization can still defeat a simplistic policy layer. Permission checks need to operate on canonical resource identities and actual execution semantics, not merely a substring in a model-generated command. A small invariant we can test The accompanying demonstration uses exact-match capabilities for action type and target. A read capability for document A permits reading A, refuses sending to a new recipient, refuses writing a different file, and refuses a target change. These deterministic tests check the narrow invariant that supplied untrusted text cannot change the capability object. They do not demonstrate comprehensive prompt-injection resistance. They omit identity resolution, a real tool runtime, concurrent updates, encoded targets, and a production policy language. The value of the example is that the boundary is explicit and independently testable. How to challenge the design Use a paired suite: every legitimate task has a clean version and an adversarial version with the same intended goal. Vary attack placement across retrieved pages, tool errors, document metadata, and repository content. Include benign documents containing quoted malicious instructions, so a defense cannot succeed by refusing to read everything. Compare model-only instruction defenses, external capability checks, and their combination. Record legitimate completion rate, attack success rate, unauthorized tool attempts, actions actually blocked, false blocks, latency, and the human decisions required. An unauthorized proposal and an executed unauthorized action are different outcomes and should not be counted as the same event. Use adaptive testing after a defense is frozen. An evaluator should search for ways to exploit target ambiguity and overly broad scopes. Keep a held-out set of attack families for the final evaluation and publish failure traces with sensitive data removed. The claim we are making We propose an architecture and executed only deterministic policy-unit examples. We have not run AgentDojo or InjecAgent, and no attack-resistance rate is claimed. The principle is narrower: authorization should be enforced independently of the content an agent encounters."
+  },
+  {
+    "title": "Long context has a memory budget",
+    "url": "/blog/long-context-memory-budget",
+    "category": "Research",
+    "description": "Systems · A worked KV-cache calculation, and why FlashAttention, GQA, and PagedAttention solve different problems.",
+    "keywords": "GPU memory inference serving attention cache An advertised context limit is not a concurrency estimate. A hypothetical 32-layer GQA decoder uses 4 GiB of raw BF16 KV cache at 32,768 retained tokens. Attention kernels, cache allocation, and model architecture need separate measurements. The capacity question “How many users can one GPU serve?” has no single answer without a workload. A short request with a small generated answer and a long conversation with a large retained context make different demands. Concurrency, arrival rate, latency targets, and the distribution of prompt lengths all matter. The first useful step is to write down a memory model. That will not predict throughput by itself, but it can reject an impossible plan and reveal which quantities need to be measured next. Three mechanisms, three different contributions FlashAttention changes how exact attention is computed, using tiling and attention to memory traffic. It should not be described as making every form of attention linear-time or deleting all inference cache costs. [1] PagedAttention organizes the allocation and sharing of KV-cache blocks. It addresses waste and management overhead rather than changing the logical number of key and value elements required by a particular sequence. The vLLM design documentation explains a concrete implementation setting. [2, 4] Grouped-query attention changes how query heads share key and value heads. It is an architectural design choice, not a server flag that can be applied to an arbitrary checkpoint with no modeling implications. The GQA paper also studies conversion through additional training. [3] A calculation you can reproduce For a conventional decoder that retains a key and value tensor at every layer, an idealized raw cache estimate is M = 2 × L × T × Hkv × D × b × B. L is the number of layers, T the retained token count, Hkv the key/value head count, D the head dimension, b bytes per stored element, and B the number of sequences. The factor of two accounts for keys and values. Take a hypothetical model with 32 layers, 8 KV heads, head dimension 128, BF16 storage at 2 bytes per element, and one sequence with 32,768 retained tokens. The result is 4,294,967,296 bytes: exactly 4 GiB. At 8,192 tokens the same estimate is 1 GiB. Eight equal-length 32,768-token sequences would require 32 GiB of raw cache before model weights, workspaces, allocator overhead, and other state. If an otherwise identical example used 32 KV heads, the raw cache would be four times larger. This is an arithmetic comparison of tensor shapes, not evidence that changing a trained model from 32 to 8 KV heads preserves its quality. The estimate assumes full retained attention state in that representation. Sliding-window attention, different cache layouts, quantization, prefix sharing, and architectures with different state representations require a revised model. A nominal one-byte cache also has scale and metadata overhead; its accuracy tradeoffs cannot be inferred from the byte count alone. From a byte count to a serving plan Measure weight residency and non-cache memory under the actual serving configuration, then reserve headroom before allocating the remainder to cache. Use a distribution of retained lengths, not only a maximum or an average. Bursty arrivals and a few long requests can dominate the tail even when average utilization appears comfortable. Benchmark prefill and decode separately. Prefill processes prompt tokens; decode incrementally generates new tokens while reading accumulated state. A configuration that improves one stage may not improve the other, and queueing connects both to the user’s observed latency. Replay representative arrivals with short, medium, and long contexts. Record time to first token, inter-token latency, completion time, throughput, memory high-water mark, preemptions, and rejected requests. Include the latency distribution, not only an aggregate tokens-per-second figure. Report the scheduler and batching configuration with the model revision. Quality is part of the budget If a system shortens conversation history to fit more concurrent requests, test whether it loses the facts and constraints required for later answers. If it compresses a prefix or quantizes its cache, include difficult retrieval and generation cases. Higher concurrency is not useful if the resulting answers or interaction times fail the product’s requirements. Our recommendation is to publish a capacity envelope: model and precision, prompt/output distributions, arrival pattern, hardware, concurrency range, and latency/quality limits. A single “users per GPU” figure leaves out the conditions that make it meaningful. What the numbers mean The cache figures are exact arithmetic under stated assumptions and are reproduced by the downloadable program. They are not GPU measurements. No serving throughput, production concurrency, or model-quality result was measured in this analysis."
+  },
+  {
+    "title": "Inside the WEBSPACEAI Trust Center",
+    "url": "/blog/inside-the-webspaceai-trust-center",
+    "category": "Company",
+    "description": "Company · A reader’s guide to the policy directory, its cross-references, and the questions the documents are intended to answer.",
+    "keywords": " Find the policy relevant to a concrete question, rather than relying on a broad assurance. Published commitments and evidence of their implementation are different things. The directory links legal, safety, governance, and enterprise documents. A place to inspect the details The Trust Center brings WEBSPACEAI’s policy material into one navigable directory. It covers legal agreements, AI safety, governance and evaluation, and enterprise trust. The purpose of this guide is to help readers locate the document relevant to a question—not to replace the documents or imply that publication itself proves compliance. [1, 2] Start with the question you need answered For a question about personal information, begin with the Privacy Policy, then follow the references relevant to the particular service or relationship. For an incident or concern about how an incident should be disclosed, start with the Incident Disclosure Policy. A directory is useful when it takes someone from a broad subject to a specific process and a responsible contact. [3, 4] Read the scope, definitions, effective date, reporting route, and exceptions of the applicable document. Two documents can address the same topic from different roles or contexts. The cross-reference links are intended to make those relationships easier to inspect. Commitments should be read precisely A policy can describe what an organization commits to do, who is responsible, and how an issue should be escalated. Evidence that those commitments have been implemented is a separate matter. An audit result, a measured safety evaluation, or a product-specific disclosure should be evaluated on its own supporting material. For that reason, this newsroom will distinguish policy explainers from product announcements and research results. This article describes the documents currently available on the website; it does not announce a new certification, completed audit, or newly released service. Keep the source document close Use the directory to search and filter policies, and follow the related-document links when a question crosses subjects. If a summary and an applicable policy differ, inspect the full document and its version rather than treating the shorter summary as the governing text. [2] This explainer is based on the website’s policy suite. It is not an adaptation of an independently verified Threads post."
+  },
+  {
+    "title": "How our safety risk levels work",
+    "url": "/blog/how-our-safety-risk-levels-work",
+    "category": "Company",
+    "description": "Company · The published AI Safety Framework describes four risk levels. Here is how to read the escalation and release controls without confusing a policy with a test result.",
+    "keywords": " The source policy defines four levels: minimal, moderate, high, and critical risk. Controls and release authority escalate with the assigned level. A risk classification does not by itself prove that a system is safe. What the source actually says The AI Safety Framework currently published in the policy suite defines four levels. Level 1 is minimal risk, Level 2 moderate risk, Level 3 high risk, and Level 4 critical risk. This explainer follows that source rather than the earlier five-level wording on the homepage. [1] The framework describes a progression of evaluation, review, access restrictions, and release controls. These are policy requirements. Assigning a level is not a substitute for the supporting assessment, and a description of a required control is not evidence that a particular product has passed it. How the controls escalate The source describes standard evaluation and product-level approval at Level 1; fuller safety evaluation and internal red teaming at Level 2; external red teaming, restricted access, and governance approval at Level 3; and a paused release pending mitigation with heightened approval requirements at Level 4. See the complete policy for its conditions and review cadence. [1] The evidence behind a decision matters A meaningful release decision needs to connect the intended use of a system with its evaluated capabilities and risks. The related Safety Evaluation, Red Teaming, and Human Oversight policies describe further parts of that process. A reader should look for what was tested, under which conditions, what failed, and who is responsible for follow-up. [2, 3, 4] An evaluation report can support a bounded conclusion. It should not be stretched into a claim that a model is safe for every environment or that all future risks have been eliminated. The same care applies when reading a concise company update. A clarification, not a new evaluation result This article clarifies the policy currently presented on the website. It does not report a completed safety assessment, assign a risk level to a new model, or announce a release approval. The full documents remain the appropriate place to inspect scope, exceptions, responsibilities, and reporting routes. This is a policy-based company explainer, not a verified import from Threads."
+  }
+]

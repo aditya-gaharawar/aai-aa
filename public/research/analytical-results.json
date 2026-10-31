@@ -1,0 +1,70 @@
+{
+  "scope": "Analytical calculations and deterministic toy-policy tests only; not empirical AI benchmark results.",
+  "binary_rewards": {
+    "p": 0.05,
+    "G8_all_fail": 0.6634204312890623,
+    "G8_no_contrast": 0.6634204313281248,
+    "G16_all_fail": 0.44012666865176536
+  },
+  "kv_cache_GiB": {
+    "32k_GQA": 4.0,
+    "8k_GQA": 1.0,
+    "32k_32heads": 16.0,
+    "eight_32k_sequences": 32.0
+  },
+  "hypothetical_70_of_100_Wilson95": [
+    0.6041514536665332,
+    0.7810511470506724
+  ],
+  "rag_policy_cases": [
+    {
+      "relevant": false,
+      "supported": false,
+      "contradiction": false,
+      "answer": false
+    },
+    {
+      "relevant": false,
+      "supported": false,
+      "contradiction": true,
+      "answer": false
+    },
+    {
+      "relevant": false,
+      "supported": true,
+      "contradiction": false,
+      "answer": false
+    },
+    {
+      "relevant": false,
+      "supported": true,
+      "contradiction": true,
+      "answer": false
+    },
+    {
+      "relevant": true,
+      "supported": false,
+      "contradiction": false,
+      "answer": false
+    },
+    {
+      "relevant": true,
+      "supported": false,
+      "contradiction": true,
+      "answer": false
+    },
+    {
+      "relevant": true,
+      "supported": true,
+      "contradiction": false,
+      "answer": true
+    },
+    {
+      "relevant": true,
+      "supported": true,
+      "contradiction": true,
+      "answer": false
+    }
+  ],
+  "capability_policy_cases_passed": 6
+}

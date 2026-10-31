@@ -1,0 +1,145 @@
+[
+  {
+    "n": "00",
+    "name": "ResearchOS",
+    "line": "Good ideas need room.",
+    "description": "Articles, notes, radio, and experiments. Arrange them in your own research desktop.",
+    "url": "/os",
+    "symbol": "✳",
+    "color": "lilac",
+    "type": "MAKE YOURSELF AT HOME",
+    "group": "Make space"
+  },
+  {
+    "n": "01",
+    "name": "Research Constellation",
+    "line": "Ideas have neighbors.",
+    "description": "Move the map. Follow a connection. Find the question between two questions.",
+    "url": "/lab/constellation",
+    "symbol": "✳",
+    "color": "sage",
+    "type": "EXPLORE",
+    "group": "Understand"
+  },
+  {
+    "n": "02",
+    "name": "The Hallucination Room",
+    "line": "Confidence is not evidence.",
+    "description": "Six investigations. Three convincing claims. One leap too far.",
+    "url": "/lab/hallucination-room",
+    "symbol": "◈",
+    "color": "peach",
+    "type": "INVESTIGATE",
+    "group": "Understand"
+  },
+  {
+    "n": "03",
+    "name": "Build a Tiny Brain",
+    "line": "The system is the experiment.",
+    "description": "Connect perception, memory, planning, tools, and safety. Then see what happens.",
+    "url": "/lab/tiny-brain",
+    "symbol": "⌘",
+    "color": "lilac",
+    "type": "SIMULATE",
+    "group": "Understand"
+  },
+  {
+    "n": "04",
+    "name": "Signal Radio",
+    "line": "Something is on the air.",
+    "description": "Tune a quiet, imaginary radio. Discover a thought between frequencies.",
+    "url": "/lab/radio",
+    "symbol": "≋",
+    "color": "peach",
+    "type": "TUNE IN",
+    "group": "Take a detour"
+  },
+  {
+    "n": "05",
+    "name": "Ask This Article",
+    "line": "Keep the evidence close.",
+    "description": "Ask a question. Inspect the passages. Follow the references.",
+    "url": "/lab/article-assistant",
+    "symbol": "↗",
+    "color": "sage",
+    "type": "READ CLOSER",
+    "group": "Understand"
+  },
+  {
+    "n": "06",
+    "name": "The Hidden Frequency",
+    "line": "A second look pays off.",
+    "description": "Find five fragments tucked around the site. Unlock a little something extra.",
+    "url": "/lab/hidden-frequency",
+    "symbol": "✧",
+    "color": "lilac",
+    "type": "DISCOVER",
+    "group": "Take a detour"
+  },
+  {
+    "n": "07",
+    "name": "Your Research Desk",
+    "line": "Make an idea your own.",
+    "description": "Collect stories, organize projects, write notes, and take a copy with you.",
+    "url": "/desk",
+    "symbol": "▤",
+    "color": "sage",
+    "type": "MAKE SPACE",
+    "group": "Make space"
+  },
+  {
+    "n": "08",
+    "name": "Lost Signal",
+    "line": "Take the scenic route.",
+    "description": "A tiny maze, three fragments, one portal. No timer. No rush.",
+    "url": "/lab/lost-signal",
+    "symbol": "◎",
+    "color": "peach",
+    "type": "PLAY",
+    "group": "Take a detour"
+  },
+  {
+    "n": "09",
+    "name": "The Unanswered Room",
+    "line": "A question needs room.",
+    "description": "An interactive fiction about evidence, permission, and the space between them.",
+    "url": "/lab/unanswered-room",
+    "symbol": "◐",
+    "color": "lilac",
+    "type": "CHOOSE A PATH",
+    "group": "Take a detour"
+  },
+  {
+    "n": "10",
+    "name": "Your Personal Observatory",
+    "line": "Curiosity leaves a little light.",
+    "description": "An opt-in, local constellation of the ideas and places you explore.",
+    "url": "/observatory",
+    "symbol": "✧",
+    "color": "sage",
+    "type": "LOOK BACK",
+    "group": "Make space"
+  },
+  {
+    "n": "11",
+    "name": "Research Time Machine",
+    "line": "Good questions travel.",
+    "description": "Revisit eight selected papers. Compare their findings, limits, and open questions.",
+    "url": "/lab/time-machine",
+    "symbol": "◷",
+    "color": "peach",
+    "type": "REVISIT",
+    "group": "Understand"
+  },
+  {
+    "n": "12",
+    "name": "The Quiet Library",
+    "line": "A thought needs a margin.",
+    "description": "Read beside another story. Keep exact-passage highlights and your own notes.",
+    "url": "/library",
+    "symbol": "❧",
+    "color": "sage",
+    "type": "READ SLOWLY",
+    "group": "Make space"
+  }
+]

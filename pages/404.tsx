@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import {LostSignal} from '../components/lab/LostSignal';
+export default function NotFound(){return <><main className="studio-page notfound-page"><header className="notfound-intro"><p className="studio-kicker">404 / AN UNEXPECTED DETOUR</p><h1>This page got lost.<br/><em>You don’t have to.</em></h1><p>The link may have moved, or never existed. While you’re here, help a little signal find its way home.</p><div className="studio-actions"><Link className="studio-text-link" href="/">Back to familiar ground ↗</Link><Link className="studio-text-link" href="/blog">Explore the journal ↗</Link></div></header><LostSignal/></main></>;}

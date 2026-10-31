@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import {QuietReader} from '../components/continuum/QuietReader';
+export default function Page({theme,toggleTheme}:{theme?:'dark'|'light';toggleTheme?:()=>void}){const requested=useRouter().query.article;return <><main className="quiet-library"><header className="quiet-library-heading"><div><p className="continuum-eyebrow">A LITTLE SPACE TO PAY ATTENTION</p><h1>The Quiet Library.</h1></div><nav aria-label="Library navigation"><button onClick={toggleTheme} aria-label={`Switch to ${theme==='dark'?'light':'dark'} theme`}>{theme==='dark'?'Light ☼':'Dark ◐'}</button><Link href="/os">ResearchOS ↗</Link><Link href="/blog">Exit to journal ↗</Link></nav></header><QuietReader initialSlug={typeof requested==='string'?requested:undefined}/></main></>;}

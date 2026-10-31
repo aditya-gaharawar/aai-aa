@@ -1,0 +1,59 @@
+{
+  "generator": "Built-in image generation",
+  "assets": [
+    {
+      "name": "hero",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. WIDE 2.4:1 landscape. Monumental, soft flowing layers of seafoam, deep petrol teal, warm ivory and a tiny trace of coral, like an aerial landscape transformed into translucent folded fabric. Broad flowing diagonal sweep and luminous edges, finely textured matte surfaces. Dark teal open central area for a large white headline, with pale sculptural folds framing the sides. Restrained, poetic, high-end abstract art.",
+      "original": "hero.png",
+      "web": "/art/abstract/hero.webp"
+    },
+    {
+      "name": "assistant",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. Broad sculptural ribbons of rose, coral pink and peach, one deep crimson accent, sweeping upward through a pale blush field. Hand-painted pastel grain meets folded matte paper. Bold close crop of a single flowing gesture, minimal, elegant and joyful. Quiet dusty rose lower edge.",
+      "original": "assistant.png",
+      "web": "/art/abstract/assistant.webp"
+    },
+    {
+      "name": "one",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. One impossible sculptural loop made of ultramarine blue paper, with an ivory inner surface. Beautiful large monolithic folded curve floats against cobalt and pale sky blue, striking light and shadow, matte stone-like surface, very minimal, deliberate asymmetric composition. Deep navy lower edge.",
+      "original": "one.png",
+      "web": "/art/abstract/one.webp"
+    },
+    {
+      "name": "safety",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. A translucent amber membrane wraps gently around a warm ivory sphere-like abstract form. Close-up, luminous honey yellow, burnt sienna and peach, curved layered paper textures, fine grain and rich shadows. Abstract metaphor of protection, elegant composition, no literal shield or icons. Deep amber lower edge.",
+      "original": "safety.png",
+      "web": "/art/abstract/safety.webp"
+    },
+    {
+      "name": "alignment",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. Two broad moss-green and pale pistachio ribbons meet in one balanced interlocking sculptural curve. Gentle soft daylight, large quiet negative spaces, tactile brushed paper, a restrained jade and cream palette with one dark forest-green region. Minimal abstract metaphor of alignment and collaboration. Forest-green lower edge.",
+      "original": "alignment.png",
+      "web": "/art/abstract/alignment.webp"
+    },
+    {
+      "name": "interpretability",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. A beautiful stack of translucent smoky glass planes with warm ivory and muted amber light passing through, offset in a shallow diagonal stair sequence, showing the inner paths of light and fine shadow, abstract architectural close-up. Sophisticated silver gray, ochre, deep charcoal, frosted texture. Dark charcoal lower edge.",
+      "original": "interpretability.png",
+      "web": "/art/abstract/interpretability.webp"
+    },
+    {
+      "name": "multimodal",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. Several broad lavender, pale lilac, sky blue and acidic yellow-green waves overlap as translucent hand-painted color fields, the overlaps create subtle new hues and organic striations. An abstract interference pattern on fine textured paper. Distinct directional movement, calm yet curious, no grids or diagrams. Dark violet lower edge.",
+      "original": "multimodal.png",
+      "web": "/art/abstract/multimodal.webp"
+    },
+    {
+      "name": "policies",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. A group of deep indigo, slate blue and muted periwinkle folded sheets form a rhythmic, orderly fan, one large pale ivory fold breaking the rhythm. A close-up abstract paper sculpture with fine fabric-like grain and soft directional light. Sophisticated governance and order metaphor, no books or typography. Navy lower edge.",
+      "original": "policies.png",
+      "web": "/art/abstract/policies.webp"
+    },
+    {
+      "name": "framework",
+      "prompt": "Use case: stylized-concept. Create original abstract editorial artwork for a sophisticated AI research company's website. Tactile fine-art materiality, subtle analog grain, beautifully controlled composition. NOT a website screenshot or UI, no typography, no text, no logos, no watermarks, no robot, no brain, no circuit-board illustration. Full bleed artwork. Main visual interest in upper two thirds; lower quarter quieter for a dark website title overlay. LANDSCAPE 4:3. Several oversized nested elliptical forms in terracotta, warm sand, apricot and off-white, hand painted thickly on textured canvas. Powerful asymmetrical curved gesture, broad brush strokes and tactile dry pastel, rich but muted, a small dark burgundy accent. Contemporary abstract color-field painting. Dark clay lower edge.",
+      "original": "framework.png",
+      "web": "/art/abstract/framework.webp"
+    }
+  ]
+}

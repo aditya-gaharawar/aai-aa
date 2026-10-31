@@ -1,0 +1,106 @@
+[
+  {
+    "title": "Discover",
+    "links": [
+      {
+        "text": "Home",
+        "href": "/"
+      },
+      {
+        "text": "Journal & newsroom",
+        "href": "/blog"
+      },
+      {
+        "text": "Curiosity Lab",
+        "href": "/lab"
+      },
+      {
+        "text": "Research Time Machine",
+        "href": "/lab/time-machine"
+      },
+      {
+        "text": "Research Constellation",
+        "href": "/lab/constellation"
+      }
+    ]
+  },
+  {
+    "title": "Your spaces",
+    "links": [
+      {
+        "text": "ResearchOS",
+        "href": "/os"
+      },
+      {
+        "text": "Quiet Library",
+        "href": "/library"
+      },
+      {
+        "text": "Research desk",
+        "href": "/desk"
+      },
+      {
+        "text": "Saved stories",
+        "href": "/reading-list"
+      },
+      {
+        "text": "Personal Observatory",
+        "href": "/observatory"
+      }
+    ]
+  },
+  {
+    "title": "Take a detour",
+    "links": [
+      {
+        "text": "The Unanswered Room",
+        "href": "/lab/unanswered-room"
+      },
+      {
+        "text": "Signal Radio",
+        "href": "/lab/radio"
+      },
+      {
+        "text": "Lost Signal",
+        "href": "/lab/lost-signal"
+      },
+      {
+        "text": "The Hidden Frequency",
+        "href": "/lab/hidden-frequency"
+      },
+      {
+        "text": "Build a Tiny Brain",
+        "href": "/lab/tiny-brain"
+      }
+    ]
+  },
+  {
+    "title": "Company & trust",
+    "links": [
+      {
+        "text": "About WEBSPACEAI",
+        "href": "/about"
+      },
+      {
+        "text": "Product directions",
+        "href": "/products"
+      },
+      {
+        "text": "Contact the team",
+        "href": "/contact"
+      },
+      {
+        "text": "Trust Center",
+        "href": "/trust"
+      },
+      {
+        "text": "Safety framework",
+        "href": "/safety"
+      },
+      {
+        "text": "Policy directory",
+        "href": "/trust/policies"
+      }
+    ]
+  }
+]

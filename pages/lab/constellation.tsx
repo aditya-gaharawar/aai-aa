@@ -1,0 +1,4 @@
+import Link from 'next/link';
+import {ResearchConstellation} from '../../components/explore/ResearchConstellation';
+import {Fragment} from '../../components/explore/Fragment';
+export default function Constellation(){return <><main className="studio-page experience-page constellation-page"><Link href="/lab" className="studio-back">← Curiosity Lab</Link><header className="studio-intro"><p className="studio-kicker">EVERY IDEA HAS NEIGHBORS</p><h1>Follow a connection.<br/><em>Find another question.</em></h1><p>Move the ideas around. Inspect a connection. The most useful insight might live between two things you already know.</p></header><ResearchConstellation/><aside className="experience-disclosure"><p>Connections are editorial interpretations of the journal’s themes. Node positions are for exploration; distance does not represent scientific similarity or measured influence.</p></aside><Fragment id="orbit"/></main></>;}

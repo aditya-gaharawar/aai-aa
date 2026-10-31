@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import {useState} from 'react';
+import {articles} from '../../lib/research';
+import {ArticleAssistant} from '../../components/explore/ArticleAssistant';
+export default function ArticleEvidence(){const [slug,setSlug]=useState(articles[0].slug);const article=articles.find(a=>a.slug===slug)!;return <><main className="studio-page experience-page evidence-page"><Link href="/lab" className="studio-back">← Curiosity Lab</Link><header className="studio-intro"><p className="studio-kicker">KEEP THE EVIDENCE CLOSE</p><h1>A question deserves<br/><em>a traceable answer.</em></h1><p>Choose an article, then look for passages that address your question. Follow the section links and references to read the surrounding context.</p></header><label className="article-picker">Choose an article<select value={slug} onChange={e=>setSlug(e.target.value)}>{articles.map(a=><option key={a.slug} value={a.slug}>{a.title}</option>)}</select></label><ArticleAssistant key={slug} article={article} standalone/><Link className="studio-text-link" href={`/blog/${slug}`}>Read the full article ↗</Link></main></>;}

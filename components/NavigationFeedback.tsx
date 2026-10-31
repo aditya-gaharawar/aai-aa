@@ -1,0 +1,11 @@
+import {useEffect,useRef,useState} from 'react';
+import {useRouter} from 'next/router';
+import {routePath} from '../lib/navigation.mjs';
+export function NavigationFeedback(){const router=useRouter(),[busy,setBusy]=useState(false),[message,setMessage]=useState('');const previous=useRef(routePath(router.asPath)),frame=useRef(0),delay=useRef<ReturnType<typeof setTimeout>>();
+ useEffect(()=>{function start(url:string){if(routePath(url)!==previous.current){clearTimeout(delay.current);delay.current=setTimeout(()=>setBusy(true),160);}}
+ function end(url:string){clearTimeout(delay.current);setBusy(false);const changed=routePath(url)!==previous.current;previous.current=routePath(url);if(!changed)return;cancelAnimationFrame(frame.current);frame.current=requestAnimationFrame(()=>{const title=document.querySelector<HTMLElement>('#page-content h1');setMessage(title?.textContent||document.title);if(!url.includes('#')){const target=title||document.getElementById('page-content');target?.setAttribute('tabindex','-1');target?.focus({preventScroll:true});}});}
+ function fail(){clearTimeout(delay.current);setBusy(false);}router.events.on('routeChangeStart',start);router.events.on('routeChangeComplete',end);router.events.on('routeChangeError',fail);return()=>{clearTimeout(delay.current);cancelAnimationFrame(frame.current);router.events.off('routeChangeStart',start);router.events.off('routeChangeComplete',end);router.events.off('routeChangeError',fail);};},[router.events]);
+ return <><div className={`route-progress ${busy?'is-busy':''}`} aria-hidden="true"/><span className="sr-only" role="status" aria-live="polite" aria-atomic="true">{message}</span></>;
+}
+
+export function BackToTop(){const [visible,setVisible]=useState(false);useEffect(()=>{function scroll(){setVisible(window.scrollY>1000);}scroll();window.addEventListener('scroll',scroll,{passive:true});return()=>window.removeEventListener('scroll',scroll);},[]);return visible?<button className="back-to-top" aria-label="Back to the top of this page" onClick={()=>{window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});const title=document.querySelector<HTMLElement>('#page-content h1');title?.setAttribute('tabindex','-1');title?.focus({preventScroll:true});}}><span aria-hidden="true">↑</span><span>Back to top</span></button>:null;}

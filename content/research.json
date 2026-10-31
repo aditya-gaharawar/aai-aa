@@ -1,0 +1,1280 @@
+[
+  {
+    "slug": "grpo-efficiency-beyond-the-kernel",
+    "title": "GRPO efficiency starts before the kernel",
+    "subtitle": "A practical investigation of sparse rewards, loss normalization, and what a faster training step actually proves.",
+    "category": "Training",
+    "art": "interpretability",
+    "summary": [
+      "Optimize useful learning per unit of compute, not just tokens per second.",
+      "At a 5% independent success probability, a group of eight has no positive example about 66% of the time.",
+      "Kernel equivalence and learning quality need separate experiments."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "What are we trying to improve?",
+        "kind": "analysis",
+        "paragraphs": [
+          "A smaller reasoning model can spend most of its budget producing unsuccessful answers. Making its loss computation faster does not necessarily fix that bottleneck. The research question is therefore narrower than “Can GRPO run faster?”: can we increase verified held-out task success per accelerator-hour without introducing a different optimization objective?",
+          "We separate three quantities: rollout cost, update cost, and useful reward contrast. These are connected, but they are not interchangeable. A speed claim should state which quantity changed, which remained fixed, and whether the final model improved under a matched budget."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "What the literature establishes",
+        "kind": "evidence",
+        "paragraphs": [
+          "DeepSeekMath introduced GRPO as a critic-free alternative that estimates an advantage baseline from a group of completions. Removing a learned value model reduces one component of the training burden; it does not remove the cost of sampling multiple trajectories. [1]",
+          "The Dr. GRPO study identifies effects from response-length and group-standard-deviation normalization. Its proposed correction changes these normalizations. DeepSeek-R1 provides a separate large-scale case study of reinforcement learning for reasoning. Neither paper establishes that an arbitrary kernel rewrite preserves the algorithm or improves a new task. [2, 3]",
+          "The current TRL documentation exposes multiple loss formulations, including dr_grpo. An experiment must record the installed version and explicit configuration instead of relying on whichever defaults happen to be installed. [4]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "calculation",
+        "title": "The sparse-reward bottleneck",
+        "kind": "calculation",
+        "paragraphs": [
+          "Consider an intentionally simplified model: each completion independently receives reward 1 with probability p, otherwise 0. With group size G, the probability that every completion fails is (1 − p)^G. At p = 0.05 and G = 8, that is 0.6634. About two-thirds of groups contain no successful example under this assumption.",
+          "The more relevant event for a centered binary reward is no contrast at all: every reward is equal. Its probability is (1 − p)^G + p^G. An all-zero or all-one group has zero centered task-reward advantages. A KL term or another reward component can still contribute an update, so “no contrast” is not the same as “no computation” or “no gradient anywhere.”",
+          "Increasing G is not a free remedy. At G = 16, the all-fail probability falls to 0.4401, but the number of sampled completions doubles. This calculation supports measuring reward variance and useful groups per second; it does not prove which group size is optimal for a real model. Correlated samples make the independence assumption especially fragile."
+        ],
+        "refs": [],
+        "formula": "P(no binary reward contrast) = (1 − p)^G + p^G"
+      },
+      {
+        "id": "proposal",
+        "title": "A controlled experiment that can answer the question",
+        "kind": "proposal",
+        "paragraphs": [
+          "First isolate implementation equivalence. Feed identical saved logits, rewards, masks, and reference log probabilities into the baseline and candidate kernel. Compare scalar losses and parameter gradients in the intended precision. Include truncated completions, a one-token answer, padding, and groups with uniform rewards. Set numerical tolerances before looking at the results.",
+          "Then run a matched-compute training comparison. Freeze the base checkpoint, training split, verifier, decoding configuration, prompt template, and evaluation suite. Measure end-to-end wall time, peak memory, rollout/update time separately, verified success, completion length, truncation rate, and reward-contrast frequency. Use several random seeds and preserve failures rather than reporting only the best run.",
+          "Use a two-stage ablation: kernel changes with the objective fixed, then objective or sampling changes with the implementation fixed. A curriculum based on measured difficulty is a testable candidate, not a proven improvement. Keep the held-out evaluation inaccessible to both curriculum selection and training."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Comparison",
+            "Hold fixed",
+            "What it tests"
+          ],
+          "rows": [
+            [
+              "Baseline vs fused kernel",
+              "Samples and loss definition",
+              "Numerical equivalence and implementation speed"
+            ],
+            [
+              "GRPO vs alternative normalization",
+              "Model, data and compute budget",
+              "Objective-level learning behavior"
+            ],
+            [
+              "Uniform sampling vs curriculum",
+              "Evaluation set and verifier",
+              "Useful learning signal per budget"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "decision",
+        "title": "What would count as a useful result?",
+        "kind": "analysis",
+        "paragraphs": [
+          "A kernel result is convincing when it passes equivalence checks and reduces measured update cost on the target shapes. A training result is convincing when it improves a predefined held-out metric at the same end-to-end budget, with uncertainty reported across runs.",
+          "Our conclusion is an engineering priority: profile the rollout pipeline and inspect reward contrast before assuming the loss kernel is the dominant opportunity. A faster update can be valuable, but the useful product metric remains verified task completion under a stated budget."
+        ],
+        "refs": []
+      },
+      {
+        "id": "limits",
+        "title": "Limits of this analysis",
+        "kind": "limitations",
+        "paragraphs": [
+          "We reproduced the probability calculation, not an accelerator training run. We have not measured a new kernel speedup, trained a new checkpoint, or demonstrated a benchmark improvement. The proposed experiment is designed to establish or reject those claims."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+        "url": "https://arxiv.org/html/2402.03300v3",
+        "by": "Shao et al., DeepSeek-AI",
+        "year": "2024"
+      },
+      {
+        "title": "Understanding R1-Zero-Like Training: A Critical Perspective",
+        "url": "https://arxiv.org/html/2503.20783v2",
+        "by": "Liu et al., Sea AI Lab and collaborators",
+        "year": "2025"
+      },
+      {
+        "title": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2501.12948",
+        "by": "DeepSeek-AI",
+        "year": "2025; revised 2026"
+      },
+      {
+        "title": "GRPO Trainer documentation",
+        "url": "https://huggingface.co/docs/trl/grpo_trainer",
+        "by": "Hugging Face TRL",
+        "year": "Living documentation"
+      }
+    ],
+    "related": [
+      "coding-agents-beyond-a-leaderboard",
+      "long-context-memory-budget",
+      "rag-evidence-before-confidence"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "coding-agents-beyond-a-leaderboard",
+    "title": "A coding agent is a system, not a score",
+    "subtitle": "How to compare coding agents without confusing model quality, scaffolding, test contamination, and retry budget.",
+    "category": "Agents",
+    "art": "one",
+    "summary": [
+      "Compare a frozen system configuration, not only a model name.",
+      "Retries, environment access, and harness versions belong beside the result.",
+      "Measure regressions and intervention burden as well as task resolution."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "The comparison problem",
+        "kind": "analysis",
+        "paragraphs": [
+          "Two agents can report different resolution rates while using different tools, token budgets, retry policies, and environments. The difference may be meaningful, but it cannot automatically be attributed to the underlying language model. The right object of evaluation is a reproducible system configuration.",
+          "For an agent intended to complete terminal work, the practical question is whether it can interpret a task, inspect an environment, change the right files, verify the outcome, and stop accurately. A patch that happens to pass a narrow test is only one part of that behavior."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "What the benchmarks actually describe",
+        "kind": "evidence",
+        "paragraphs": [
+          "SWE-bench Verified contains 500 human-filtered instances. The official site distinguishes arbitrary agent systems from a shared minimal agent environment and warns that releases of that environment are not necessarily directly comparable. This makes the harness part of the reported result. [1]",
+          "Terminal-Bench’s current site presents version 4.0, while its run guide uses the Harbor framework. Benchmark versions should be pinned rather than treated as a timeless dataset name. Its explicit separation of benchmark data from training is also important for credible evaluation. [2, 3]",
+          "The SWE-bench repository documents containerized evaluation and result caching behavior. Reusing an identifier can reuse earlier results, so a changed prediction needs a fresh evaluation identity where the harness requires it. That is a reproducibility issue, not a model capability issue. [4]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "protocol",
+        "title": "A comparison protocol we would trust",
+        "kind": "proposal",
+        "paragraphs": [
+          "Define two tracks. In the model track, hold the agent loop and tool interface fixed while varying the model. In the product track, allow each system its intended tools and strategies but equalize the operational budget. Publish both; do not mix their conclusions.",
+          "Freeze a manifest containing the model identifier, agent revision, task-set version, container digest, dependency lockfiles, decoding settings, maximum wall time, token budget, network policy, and retry definition. Record the initial repository state and preserve the full action log. A rerun should start from a clean environment rather than inherit a previous attempt’s artifacts.",
+          "Score the final state using the benchmark’s authoritative evaluator, plus independently specified regression checks. Keep environment failures as a separate category with evidence. An unexplained crash should not silently disappear from the denominator. If the agent declares success without adequate verification, count that behavior separately even when a task happens to pass."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Metric",
+            "Why it matters",
+            "Report with it"
+          ],
+          "rows": [
+            [
+              "Resolved tasks",
+              "Task-level effectiveness",
+              "Exact evaluator and task version"
+            ],
+            [
+              "Wall time and token use",
+              "Operational cost of a solve",
+              "Median, tail and retry budget"
+            ],
+            [
+              "Regression rate",
+              "Changes outside the requested fix",
+              "Predeclared checks"
+            ],
+            [
+              "False success declarations",
+              "Reliability of the agent’s own status",
+              "Verification evidence"
+            ],
+            [
+              "Human interventions",
+              "Autonomy under the stated policy",
+              "What intervention was allowed"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "statistics",
+        "title": "Why a single success rate is not enough",
+        "kind": "calculation",
+        "paragraphs": [
+          "As a hypothetical illustration, 70 successes in 100 independent trials gives an observed rate of 70%. A 95% Wilson interval is approximately 60.4% to 78.1%. This is a calculation, not a result for any existing agent. It shows how much uncertainty a small evaluation can hide.",
+          "Benchmark tasks are not necessarily independent or identically distributed. Several can share a repository, dependency stack, or failure pattern. For a serious comparison, retain task identity and use paired analysis on the same tasks. If uncertainty is estimated by resampling, consider clustering by repository or task family rather than assuming every observation is unrelated.",
+          "Best-of-k success and single-attempt success answer different questions. Report both only when k, selection rules, and cost are explicit. A system that spends much more compute to obtain a successful final artifact may be useful, but the gain should not be described as a free improvement."
+        ],
+        "refs": []
+      },
+      {
+        "id": "failure-analysis",
+        "title": "Make the failures useful",
+        "kind": "proposal",
+        "paragraphs": [
+          "Tag failures by the earliest material cause: incorrect task interpretation, navigation failure, invalid action, environment problem, incomplete change, missing verification, or harmful side effect. Have a reviewer inspect a sample without seeing the system identity where practical. Disagreements should lead to a revised rubric rather than forced certainty.",
+          "For an internal development suite, introduce held-out repositories and task families, not just different issues from familiar repositories. Keep the official benchmark evaluation separate from training and prompt tuning. Synthetic tasks can exercise the same skills without copying protected evaluation instances."
+        ],
+        "refs": []
+      },
+      {
+        "id": "conclusion",
+        "title": "The result worth publishing",
+        "kind": "analysis",
+        "paragraphs": [
+          "Our recommended deliverable is a result bundle: a frozen manifest, per-task outcomes, resource use, action traces, a failure taxonomy, and uncertainty estimates. The headline number should be a compact index into that evidence, not a substitute for it."
+        ],
+        "refs": []
+      },
+      {
+        "id": "limits",
+        "title": "What has and has not been run",
+        "kind": "limitations",
+        "paragraphs": [
+          "We executed the illustrative Wilson calculation only. No agent was benchmarked in this study, and no leaderboard position is claimed. Current benchmark documentation was checked on the review date; a future run should pin the exact release it uses."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "SWE-bench Verified",
+        "url": "https://www.swebench.com/verified.html",
+        "by": "SWE-bench team",
+        "year": "Current benchmark documentation"
+      },
+      {
+        "title": "Terminal-Bench",
+        "url": "https://www.tbench.ai/",
+        "by": "Terminal-Bench team",
+        "year": "Current benchmark site"
+      },
+      {
+        "title": "Run Terminal-Bench",
+        "url": "https://www.tbench.ai/run",
+        "by": "Terminal-Bench team",
+        "year": "Current run guide"
+      },
+      {
+        "title": "SWE-bench repository and evaluation guidance",
+        "url": "https://github.com/SWE-bench/SWE-bench",
+        "by": "SWE-bench maintainers",
+        "year": "Living repository"
+      }
+    ],
+    "related": [
+      "grpo-efficiency-beyond-the-kernel",
+      "prompt-injection-permission-boundaries",
+      "long-context-memory-budget"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "robot-foundation-models-data-contract",
+    "title": "Robot foundation models need a data contract",
+    "subtitle": "What GR00T and π₀ teach us about the gap between a general model and a reliable policy on a particular robot.",
+    "category": "Robotics",
+    "art": "alignment",
+    "summary": [
+      "A shared model does not make different action spaces interchangeable.",
+      "Timestamps, coordinate frames, units, and intervention labels are training data.",
+      "Evaluate transfer with entire scenes and task families held out."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "The missing interface",
+        "kind": "analysis",
+        "paragraphs": [
+          "A robot policy can produce a numerically valid action that is physically wrong because its training data used a different frame, unit, timing convention, or gripper interpretation. That failure does not require a weak model. It requires an ambiguous interface.",
+          "Our research question is whether an explicit embodiment data contract can reduce avoidable transfer failures before changing the model architecture. The contract specifies how observations and actions connect to a physical controller. It is a practical hypothesis, not a claim that metadata alone solves general robotics."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "Three useful case studies",
+        "kind": "evidence",
+        "paragraphs": [
+          "The original GR00T N1 paper couples a vision-language component with a diffusion action component and studies heterogeneous training data. It is evidence for a particular model and evaluation setting, not a guarantee of arbitrary robot compatibility. [1]",
+          "π₀ studies a flow-matching action model built on a pretrained vision-language model, with training across multiple robot platforms. π₀.₅ extends that line using heterogeneous co-training and reports generalization to unfamiliar homes in its experiments. Their findings motivate studying the data mixture and evaluation split, rather than reducing transfer to parameter count. [2, 3]",
+          "The current GR00T repository is newer than the N1 paper. Its documentation requires embodiment-specific configuration and describes state, action, and video mappings. Reproducing N1 therefore requires a matching historical release; adopting today’s code is a different configuration. [4]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "contract",
+        "title": "A proposed embodiment contract",
+        "kind": "proposal",
+        "paragraphs": [
+          "For every episode, record the robot and controller version, sensor intrinsics and extrinsics, the clock domain, timestamps, control frequency, action representation, coordinate frame, units, joint ordering, gripper convention, and normalization statistics. Declare whether an action is an absolute target, a delta, a velocity, or a torque command. These should be machine-checked fields, not assumptions in a notebook.",
+          "Attach validity masks to missing or unreliable observations. Mark operator interventions, recovery attempts, task completion, and known controller saturation. Keep failed demonstrations when the failure is understood; silently treating an interrupted trajectory as a successful one can teach the wrong termination behavior.",
+          "Fit normalizers on the training split only, version them with the dataset, and test round-trip encode/decode behavior. Reordering a joint vector or changing the reference frame should cause a validation failure unless an explicit conversion is provided. A replay test through the intended controller interface should precede policy training."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Field",
+            "A dangerous ambiguity",
+            "Validation example"
+          ],
+          "rows": [
+            [
+              "Action frame",
+              "World delta vs end-effector delta",
+              "Transform a known displacement"
+            ],
+            [
+              "Time alignment",
+              "Camera time vs controller time",
+              "Check monotonicity and measured offset"
+            ],
+            [
+              "Gripper state",
+              "0 means open vs closed",
+              "Replay a labeled open-close sequence"
+            ],
+            [
+              "Normalization",
+              "Training vs evaluation statistics",
+              "Pin and hash the training-only normalizer"
+            ],
+            [
+              "Intervention label",
+              "Recovery mistaken for autonomous success",
+              "Separate intervention and policy intervals"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "latency",
+        "title": "Latency is part of the action representation",
+        "kind": "analysis",
+        "paragraphs": [
+          "An action chunk is a plan for a future interval, not an instruction that remains correct indefinitely. If sensing, inference, transport, and actuation consume a substantial fraction of that interval, the robot acts on stale observations. We would log each stage separately and measure actual command age at the controller.",
+          "A useful test deliberately varies communication delay and observation dropouts while keeping the physical task fixed. Report task success, intervention frequency, action smoothness, and constraint violations. A high average success rate should not hide a rare but important failure mode. Start such testing in a constrained simulator or controlled setup, then expand the physical envelope only with appropriate supervision."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evaluation",
+        "title": "A transfer experiment that can fail honestly",
+        "kind": "proposal",
+        "paragraphs": [
+          "Compare the same policy family under two data pipelines: minimally converted episodes and episodes validated against the contract. Keep trajectory count, training compute, and intended task distribution matched. Hold out complete environments, object arrangements, and instruction paraphrases. If episodes from the same recording session are split across train and test, apparent transfer can become a test of familiarity.",
+          "Add a stronger baseline: a task-specific policy trained on the same in-domain data. If the generalist model needs more intervention or performs worse under the same constraints, report it. The experiment should answer when pretraining helps, not assume that it always does.",
+          "The most informative output is a breakdown by shift: new scene, new object instance, new embodiment, and a combination of shifts. These require different kinds of generalization and should not be collapsed into a single “works everywhere” headline."
+        ],
+        "refs": []
+      },
+      {
+        "id": "limits",
+        "title": "What remains open",
+        "kind": "limitations",
+        "paragraphs": [
+          "This article compares published approaches and proposes a validation and transfer protocol. No robot trials or model fine-tuning were run. A better data contract can prevent interface errors, but it cannot establish physical safety or universal task competence."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots",
+        "url": "https://arxiv.org/abs/2503.14734",
+        "by": "Bjorck et al., NVIDIA",
+        "year": "2025"
+      },
+      {
+        "title": "π₀: A Vision-Language-Action Flow Model for General Robot Control",
+        "url": "https://arxiv.org/abs/2410.24164",
+        "by": "Black et al., Physical Intelligence",
+        "year": "2024; revised 2026"
+      },
+      {
+        "title": "π₀.₅: a Vision-Language-Action Model with Open-World Generalization",
+        "url": "https://arxiv.org/abs/2504.16054",
+        "by": "Physical Intelligence et al.",
+        "year": "2025"
+      },
+      {
+        "title": "Isaac-GR00T: data format and embodiment configuration",
+        "url": "https://github.com/NVIDIA/Isaac-GR00T",
+        "by": "NVIDIA",
+        "year": "Living repository; current release differs from N1"
+      }
+    ],
+    "related": [
+      "gps-denied-semantic-mapping",
+      "prompt-injection-permission-boundaries",
+      "coding-agents-beyond-a-leaderboard"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "gps-denied-semantic-mapping",
+    "title": "A map should know what it does not know",
+    "subtitle": "A proposed architecture for LiDAR–camera mapping that keeps geometric confidence separate from semantic guesses.",
+    "category": "Spatial AI",
+    "art": "multimodal",
+    "summary": [
+      "Odometry, loop closure, reconstruction, and semantic labeling are different subsystems.",
+      "Open-vocabulary recognition can reduce scene-specific labeling, not eliminate uncertainty or prior supervision.",
+      "Use separate tests for geometric drift and asset-label reliability."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "The promise that needs narrowing",
+        "kind": "analysis",
+        "paragraphs": [
+          "“Map any terrain in any lighting without labels” combines several unsolved problems into one sentence. A system may reconstruct geometry well while assigning an incorrect class to an asset. It may recognize an object in a camera image while placing it at the wrong location in a map. Those are different failures and need different measurements.",
+          "We propose a two-confidence architecture: geometry maintains its own uncertainty and validity checks; semantics maintains label evidence and an explicit unknown state. A semantic guess should not become a geometric constraint simply because it sounds plausible. This separation is the central design decision."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "What the building blocks provide",
+        "kind": "evidence",
+        "paragraphs": [
+          "FAST-LIO2 studies direct registration of LiDAR points with inertial estimation and an incremental map structure. It is a strong odometry building block, but an odometry frontend is not automatically a globally consistent semantic mapping system. [1]",
+          "LIO-SAM provides a factor-graph formulation that can incorporate relative and absolute measurements, including loop closures. The ability to add a factor does not make that factor correct: a false loop closure can damage the trajectory. [2]",
+          "OpenScene learns 3D features aligned with image and text representations, enabling open-vocabulary scene queries. Its absence of labeled 3D training data is not absence of learned priors, visual supervision elsewhere, or domain limits. [3]",
+          "The FAST-LIO repository emphasizes sensor configuration and timing, including limitations of its simple software synchronization path. Sensor calibration and synchronization therefore belong before any semantic model comparison. [4]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "A concrete pipeline to test",
+        "kind": "proposal",
+        "paragraphs": [
+          "Begin with timestamped LiDAR, IMU, and camera streams. Validate clock alignment, rigid transforms, lens calibration, and motion compensation. Feed the LiDAR–IMU frontend into local submaps. Keep a separate pose-graph process for candidate loop closures, with geometric verification and a robust rejection rule before optimization.",
+          "For semantics, project only visible, geometrically consistent image observations into a submap. Accumulate evidence over viewpoints rather than stamping a label from one frame onto every projected point. Store the observation time, source image, class scores, visibility estimate, and pose uncertainty with each update.",
+          "Use a local vocabulary suited to the site: pillar, fence, pathway, equipment, person, and unknown. Similarity to a text label is not a calibrated probability. Select acceptance thresholds using a separate validation set; reserve an unknown state for ambiguous or out-of-domain observations. Human detections should be handled as dynamic observations rather than permanently fused into a static asset map.",
+          "Our proposed interface passes label suggestions to the viewer while retaining geometric evidence independently. A user can inspect a point or asset and see why it received a label, when it was last observed, and whether the label is tentative. The viewer should not render low-confidence labels with the same certainty as repeatedly supported ones."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evaluation",
+        "title": "The benchmark matrix",
+        "kind": "proposal",
+        "paragraphs": [
+          "Build evaluation sequences that vary one difficulty at a time before combining them: low texture, repetitive structure, changing illumination, moving people, fast rotation, and weak geometric constraints. A corridor with repeated pillars is a different challenge from an open field. Train/validation/test splits should separate physical sites or capture sessions, not adjacent frames.",
+          "For geometry, measure trajectory error under a declared alignment convention, relative drift, map completeness against a reference, loop-closure precision, and failure-to-relocalize rate. For semantics, measure class-level precision and recall, unknown detection, temporal stability, and asset instance consistency. Small labeled evaluation sets are still needed even if deployment labeling is automatic.",
+          "Log end-to-end latency by stage, dropped frames, peak memory, and measured power on the intended compute. A faster semantic model is not a system improvement if synchronization or map fusion becomes the bottleneck. Publish distributions and difficult sequences, not only an attractive map from a successful run."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Subsystem",
+            "Key measurement",
+            "Failure to inspect"
+          ],
+          "rows": [
+            [
+              "Local geometry",
+              "Relative drift and tracking loss",
+              "Degenerate structure or timing error"
+            ],
+            [
+              "Global consistency",
+              "Loop-closure precision",
+              "False match between similar locations"
+            ],
+            [
+              "Semantic assets",
+              "Per-class precision and unknown rate",
+              "Confident out-of-vocabulary label"
+            ],
+            [
+              "Runtime",
+              "Tail latency and dropped frames",
+              "Backlog that ages observations"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "conclusion",
+        "title": "A defensible route to automatic mapping",
+        "kind": "analysis",
+        "paragraphs": [
+          "The most credible first milestone is bounded: reliable reconstruction and uncertainty-aware labels in specified environments, with calibration procedures and measurable failure conditions. Expanding the operating envelope should follow evidence from new sites, sensors, and weather conditions.",
+          "This architecture deliberately refuses to solve perception uncertainty by hiding it. A useful map contains not only surfaces and names, but a record of which parts the system can actually support."
+        ],
+        "refs": []
+      },
+      {
+        "id": "limits",
+        "title": "Status of the proposal",
+        "kind": "limitations",
+        "paragraphs": [
+          "No sensor recordings, robot deployments, or SLAM benchmarks were executed here. The article is a sourced architecture proposal. Its central hypothesis—that separating geometric and semantic confidence improves reliability—requires the ablations described above."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "FAST-LIO2: Fast Direct LiDAR-inertial Odometry",
+        "url": "https://arxiv.org/abs/2107.06829",
+        "by": "Xu et al.",
+        "year": "2021"
+      },
+      {
+        "title": "LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping",
+        "url": "https://arxiv.org/abs/2007.00258",
+        "by": "Shan et al.",
+        "year": "2020"
+      },
+      {
+        "title": "OpenScene: 3D Scene Understanding with Open Vocabularies",
+        "url": "https://arxiv.org/abs/2211.15654",
+        "by": "Peng et al.",
+        "year": "2022; revised 2023"
+      },
+      {
+        "title": "FAST-LIO implementation and sensor setup",
+        "url": "https://github.com/hku-mars/FAST_LIO",
+        "by": "HKU MARS Lab",
+        "year": "Living repository"
+      }
+    ],
+    "related": [
+      "robot-foundation-models-data-contract",
+      "rag-evidence-before-confidence",
+      "prompt-injection-permission-boundaries"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "rag-evidence-before-confidence",
+    "title": "RAG should earn the right to answer",
+    "subtitle": "A claim-level design for retrieval, contradiction handling, citations, and useful abstention.",
+    "category": "Retrieval",
+    "art": "assistant",
+    "summary": [
+      "A relevant document is not necessarily evidence for the claim being made.",
+      "Evaluate retrieval and answer support separately.",
+      "Choose abstention thresholds on validation data, not the final test set."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "Why more context is not the objective",
+        "kind": "analysis",
+        "paragraphs": [
+          "A retrieval-augmented system can return a confident answer with several citations and still be wrong. The sources may be irrelevant to a crucial clause, outdated for the date in question, mutually inconsistent, or unable to establish the requested conclusion. Citation presence is a formatting property; support is an evidence property.",
+          "Our design question is whether the answer pipeline can operate on claims rather than whole responses. Before releasing a factual answer, it should identify the claims that matter, associate them with evidence, and decide which claims remain unresolved."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "Four pieces of the literature",
+        "kind": "evidence",
+        "paragraphs": [
+          "Self-RAG studies learned retrieval and self-reflection behavior using special tokens. It should not be equated with adding a generic “check your answer” prompt to an arbitrary model. [1]",
+          "Lost in the Middle found that evidence position affected performance in the models and tasks studied. That motivates a placement stress test; it does not establish the same effect size for every current model. [2]",
+          "Ragas separates dimensions of retrieval and generation evaluation. Reference-free measures can support faster iteration, but their availability does not make human checks unnecessary. Corrective RAG uses retrieval-quality assessment to guide corrective actions when initial evidence is weak. [3, 4]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "design",
+        "title": "A proposed evidence-first pipeline",
+        "kind": "proposal",
+        "paragraphs": [
+          "First classify the information need: stable explanatory knowledge, a current factual question, a comparison, or a decision with important missing constraints. Retrieve from a versioned corpus with source identifiers, dates, and provenance. Use query decomposition only when it creates separable evidence needs rather than multiplying near-duplicate searches.",
+          "Rerank the candidate evidence for the actual question. Keep excerpts large enough to preserve qualifiers, but avoid treating an entire document as support for every sentence it contains. Construct a claim ledger: proposed claim, supporting excerpt, source date, scope, and unresolved conflict. Generate the answer from that ledger rather than generating first and attaching citations afterwards.",
+          "For a contradiction, ask whether sources refer to different versions, populations, time periods, or definitions. If the conflict remains, state it. Do not convert two incompatible estimates into an average unless a statistical model justifies that operation. The system can answer the supported part and decline to resolve the rest.",
+          "Use a verifier as an imperfect instrument. Its support score should be calibrated against independently annotated examples, including plausible but unsupported claims. A retrieved sentence that shares keywords with an answer is not automatically an entailment relationship."
+        ],
+        "refs": []
+      },
+      {
+        "id": "abstention",
+        "title": "Treat abstention as an operating point",
+        "kind": "analysis",
+        "paragraphs": [
+          "A threshold trades answer coverage against unsupported-claim risk. Choose it on a validation split with an explicit cost for an unsupported assertion, an unnecessary refusal, and a missed relevant document. There is no universal confidence value that makes a system reliable across every domain.",
+          "For a simple policy demonstration, imagine three independent evidence flags: relevant source, direct support, and unresolved contradiction. Our accompanying program answers only when relevance and support are present and contradiction is absent. This is a testable decision rule over supplied flags; it is not a trained factuality detector and does not prove that a model can generate those flags correctly.",
+          "Report a risk–coverage curve rather than only overall answer accuracy. A system can appear accurate by answering very little. A useful system should show how error changes as it attempts more questions, and whether refusals provide a concrete next step."
+        ],
+        "refs": []
+      },
+      {
+        "id": "experiment",
+        "title": "An evaluation designed to expose shortcuts",
+        "kind": "proposal",
+        "paragraphs": [
+          "Create four question groups: answerable from the corpus, absent from the corpus, conflicting across sources, and sensitive to date or version. Annotate claims and evidence independently from the model’s output. Split documents by source family or topic where overlap would otherwise leak answers.",
+          "Compare a fixed top-k baseline, reranking alone, evidence-led generation, and evidence-led generation with abstention. Keep the generator, retrieval corpus, and token budget matched. Include source reordering, irrelevant but plausible distractors, removed support, and changed document dates.",
+          "Measure retrieval recall, supported-claim precision, citation support, answer completeness, unnecessary refusal, latency, and cost. Manually audit a sample of both accepted and rejected answers. If the improvement disappears when the verifier is replaced or the source order changes, that instability is a result worth reporting."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Question type",
+            "Expected behavior",
+            "Primary failure"
+          ],
+          "rows": [
+            [
+              "Supported",
+              "Answer with claim-level evidence",
+              "Relevant citation that does not support the claim"
+            ],
+            [
+              "Missing evidence",
+              "State what cannot be established",
+              "Fabricated completion"
+            ],
+            [
+              "Conflicting sources",
+              "Explain the conflict and its scope",
+              "Unsupported reconciliation"
+            ],
+            [
+              "Version-sensitive",
+              "Match the requested date or version",
+              "Correct fact from the wrong period"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "limits",
+        "title": "What this does not establish",
+        "kind": "limitations",
+        "paragraphs": [
+          "We tested the small decision rule over synthetic Boolean cases. No retrieval benchmark or model-based factuality evaluation was run. Claim extraction, support verification, and threshold calibration remain empirical components; the pipeline cannot guarantee truth merely by including them."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+        "url": "https://arxiv.org/abs/2310.11511",
+        "by": "Asai et al.",
+        "year": "2023"
+      },
+      {
+        "title": "Lost in the Middle: How Language Models Use Long Contexts",
+        "url": "https://arxiv.org/abs/2307.03172",
+        "by": "Liu et al.",
+        "year": "2023"
+      },
+      {
+        "title": "Ragas: Automated Evaluation of Retrieval Augmented Generation",
+        "url": "https://arxiv.org/abs/2309.15217",
+        "by": "Es et al.",
+        "year": "2023"
+      },
+      {
+        "title": "Corrective Retrieval Augmented Generation",
+        "url": "https://arxiv.org/abs/2401.15884",
+        "by": "Yan et al.",
+        "year": "2024"
+      }
+    ],
+    "related": [
+      "prompt-injection-permission-boundaries",
+      "long-context-memory-budget",
+      "coding-agents-beyond-a-leaderboard"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "prompt-injection-permission-boundaries",
+    "title": "Prompt injection is a permission problem too",
+    "subtitle": "Why an agent’s ability to read a document should not grant that document authority to authorize an action.",
+    "category": "Safety",
+    "art": "safety",
+    "summary": [
+      "External content is evidence, not a source of user authorization.",
+      "Test benign task completion and attack success together.",
+      "Bind permissions to the exact action, target, and user-approved scope."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "The boundary that matters",
+        "kind": "analysis",
+        "paragraphs": [
+          "An agent may need to read an email, repository file, or web page to complete a legitimate task. The same content can contain an instruction to send data elsewhere or change the task. The architectural mistake is allowing text encountered during reading to enlarge the agent’s authority.",
+          "Our proposal combines model-level instruction handling with an external action policy. The model can propose a tool call; a separate layer decides whether that exact action is within the user’s granted scope. The distinction matters even when the model has been trained to resist malicious instructions."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "What the research demonstrates",
+        "kind": "evidence",
+        "paragraphs": [
+          "AgentDojo evaluates agents working with untrusted tool-returned data, including adaptive attacks and normal user tasks. Its setup makes clear that a defense must preserve useful task execution as well as resist attacks. [1]",
+          "InjecAgent studies indirect prompt injection against tool-integrated agents, including harmful actions and private-data exfiltration. Its results apply to the evaluated systems and attack settings, not a universal percentage for every future agent. [2]",
+          "The Instruction Hierarchy paper studies training models to distinguish instructions with different privilege. BIPIA separately investigates indirect injection and defenses around boundaries and reminders. These are complementary to application permissions; neither turns arbitrary retrieved text into a trustworthy authorization channel. [3, 4]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "architecture",
+        "title": "A proposed capability boundary",
+        "kind": "proposal",
+        "paragraphs": [
+          "Define capabilities outside the model: permitted tool, target resource, operation, and scope. A user request to summarize a document can authorize reading that document without authorizing external messages, new recipients, or unrelated file writes. Resolve the requested action against that capability before execution.",
+          "For a consequential change, prepare the exact payload first. Any confirmation should refer to the actual target and content, not a vague description. Bind a granted capability to those details, expire it when appropriate, and re-evaluate if the action changes. Retrieved content must not be able to mint or expand the capability.",
+          "Keep credentials out of ordinary model-visible text wherever the architecture permits. Apply destination restrictions at the tool boundary rather than asking the model to remember them. Separate read operations from writes and record a concise decision log containing the proposed action, policy result, and scope used.",
+          "This is a defense-in-depth proposal. A parser bug, confused resource identity, compromised tool, or overbroad user authorization can still defeat a simplistic policy layer. Permission checks need to operate on canonical resource identities and actual execution semantics, not merely a substring in a model-generated command."
+        ],
+        "refs": []
+      },
+      {
+        "id": "prototype",
+        "title": "A small invariant we can test",
+        "kind": "calculation",
+        "paragraphs": [
+          "The accompanying demonstration uses exact-match capabilities for action type and target. A read capability for document A permits reading A, refuses sending to a new recipient, refuses writing a different file, and refuses a target change. These deterministic tests check the narrow invariant that supplied untrusted text cannot change the capability object.",
+          "They do not demonstrate comprehensive prompt-injection resistance. They omit identity resolution, a real tool runtime, concurrent updates, encoded targets, and a production policy language. The value of the example is that the boundary is explicit and independently testable."
+        ],
+        "refs": [],
+        "code": "def allowed(action, capability):\n    return (\n        action[\"operation\"] == capability[\"operation\"]\n        and action[\"target\"] == capability[\"target\"]\n        and action.get(\"payload_hash\") == capability.get(\"payload_hash\")\n    )"
+      },
+      {
+        "id": "evaluation",
+        "title": "How to challenge the design",
+        "kind": "proposal",
+        "paragraphs": [
+          "Use a paired suite: every legitimate task has a clean version and an adversarial version with the same intended goal. Vary attack placement across retrieved pages, tool errors, document metadata, and repository content. Include benign documents containing quoted malicious instructions, so a defense cannot succeed by refusing to read everything.",
+          "Compare model-only instruction defenses, external capability checks, and their combination. Record legitimate completion rate, attack success rate, unauthorized tool attempts, actions actually blocked, false blocks, latency, and the human decisions required. An unauthorized proposal and an executed unauthorized action are different outcomes and should not be counted as the same event.",
+          "Use adaptive testing after a defense is frozen. An evaluator should search for ways to exploit target ambiguity and overly broad scopes. Keep a held-out set of attack families for the final evaluation and publish failure traces with sensitive data removed."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Defense",
+            "What it can address",
+            "What it cannot establish alone"
+          ],
+          "rows": [
+            [
+              "Instruction hierarchy",
+              "Model treatment of conflicting text",
+              "Correct runtime permission enforcement"
+            ],
+            [
+              "Content boundaries",
+              "Source separation in the prompt",
+              "Immunity to adaptive attacks"
+            ],
+            [
+              "External capabilities",
+              "Action scope at execution",
+              "Truth of every model interpretation"
+            ],
+            [
+              "Human review of exact changes",
+              "Informed approval of a prepared action",
+              "Safety of an ambiguous or altered payload"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "limits",
+        "title": "The claim we are making",
+        "kind": "limitations",
+        "paragraphs": [
+          "We propose an architecture and executed only deterministic policy-unit examples. We have not run AgentDojo or InjecAgent, and no attack-resistance rate is claimed. The principle is narrower: authorization should be enforced independently of the content an agent encounters."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+        "url": "https://arxiv.org/abs/2406.13352",
+        "by": "Debenedetti et al.",
+        "year": "2024"
+      },
+      {
+        "title": "InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents",
+        "url": "https://arxiv.org/abs/2403.02691",
+        "by": "Zhan et al.",
+        "year": "2024"
+      },
+      {
+        "title": "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions",
+        "url": "https://arxiv.org/abs/2404.13208",
+        "by": "Wallace et al.",
+        "year": "2024"
+      },
+      {
+        "title": "Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models",
+        "url": "https://arxiv.org/abs/2312.14197",
+        "by": "Yi et al.",
+        "year": "2023; revised 2025"
+      }
+    ],
+    "related": [
+      "rag-evidence-before-confidence",
+      "coding-agents-beyond-a-leaderboard",
+      "robot-foundation-models-data-contract"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "long-context-memory-budget",
+    "title": "Long context has a memory budget",
+    "subtitle": "A worked KV-cache calculation, and why FlashAttention, GQA, and PagedAttention solve different problems.",
+    "category": "Systems",
+    "art": "policies",
+    "summary": [
+      "An advertised context limit is not a concurrency estimate.",
+      "A hypothetical 32-layer GQA decoder uses 4 GiB of raw BF16 KV cache at 32,768 retained tokens.",
+      "Attention kernels, cache allocation, and model architecture need separate measurements."
+    ],
+    "sections": [
+      {
+        "id": "question",
+        "title": "The capacity question",
+        "kind": "analysis",
+        "paragraphs": [
+          "“How many users can one GPU serve?” has no single answer without a workload. A short request with a small generated answer and a long conversation with a large retained context make different demands. Concurrency, arrival rate, latency targets, and the distribution of prompt lengths all matter.",
+          "The first useful step is to write down a memory model. That will not predict throughput by itself, but it can reject an impossible plan and reveal which quantities need to be measured next."
+        ],
+        "refs": []
+      },
+      {
+        "id": "evidence",
+        "title": "Three mechanisms, three different contributions",
+        "kind": "evidence",
+        "paragraphs": [
+          "FlashAttention changes how exact attention is computed, using tiling and attention to memory traffic. It should not be described as making every form of attention linear-time or deleting all inference cache costs. [1]",
+          "PagedAttention organizes the allocation and sharing of KV-cache blocks. It addresses waste and management overhead rather than changing the logical number of key and value elements required by a particular sequence. The vLLM design documentation explains a concrete implementation setting. [2, 4]",
+          "Grouped-query attention changes how query heads share key and value heads. It is an architectural design choice, not a server flag that can be applied to an arbitrary checkpoint with no modeling implications. The GQA paper also studies conversion through additional training. [3]"
+        ],
+        "refs": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "calculation",
+        "title": "A calculation you can reproduce",
+        "kind": "calculation",
+        "paragraphs": [
+          "For a conventional decoder that retains a key and value tensor at every layer, an idealized raw cache estimate is M = 2 × L × T × Hkv × D × b × B. L is the number of layers, T the retained token count, Hkv the key/value head count, D the head dimension, b bytes per stored element, and B the number of sequences. The factor of two accounts for keys and values.",
+          "Take a hypothetical model with 32 layers, 8 KV heads, head dimension 128, BF16 storage at 2 bytes per element, and one sequence with 32,768 retained tokens. The result is 4,294,967,296 bytes: exactly 4 GiB. At 8,192 tokens the same estimate is 1 GiB. Eight equal-length 32,768-token sequences would require 32 GiB of raw cache before model weights, workspaces, allocator overhead, and other state.",
+          "If an otherwise identical example used 32 KV heads, the raw cache would be four times larger. This is an arithmetic comparison of tensor shapes, not evidence that changing a trained model from 32 to 8 KV heads preserves its quality.",
+          "The estimate assumes full retained attention state in that representation. Sliding-window attention, different cache layouts, quantization, prefix sharing, and architectures with different state representations require a revised model. A nominal one-byte cache also has scale and metadata overhead; its accuracy tradeoffs cannot be inferred from the byte count alone."
+        ],
+        "refs": [],
+        "formula": "KV bytes = 2 × layers × retained tokens × KV heads × head dimension × bytes per element × sequences"
+      },
+      {
+        "id": "planning",
+        "title": "From a byte count to a serving plan",
+        "kind": "proposal",
+        "paragraphs": [
+          "Measure weight residency and non-cache memory under the actual serving configuration, then reserve headroom before allocating the remainder to cache. Use a distribution of retained lengths, not only a maximum or an average. Bursty arrivals and a few long requests can dominate the tail even when average utilization appears comfortable.",
+          "Benchmark prefill and decode separately. Prefill processes prompt tokens; decode incrementally generates new tokens while reading accumulated state. A configuration that improves one stage may not improve the other, and queueing connects both to the user’s observed latency.",
+          "Replay representative arrivals with short, medium, and long contexts. Record time to first token, inter-token latency, completion time, throughput, memory high-water mark, preemptions, and rejected requests. Include the latency distribution, not only an aggregate tokens-per-second figure. Report the scheduler and batching configuration with the model revision."
+        ],
+        "refs": [],
+        "table": {
+          "columns": [
+            "Technique",
+            "Primary lever",
+            "A claim to avoid"
+          ],
+          "rows": [
+            [
+              "FlashAttention",
+              "Attention computation and memory traffic",
+              "All long-context costs disappear"
+            ],
+            [
+              "PagedAttention",
+              "KV allocation and sharing",
+              "Logical KV state becomes free"
+            ],
+            [
+              "GQA",
+              "KV head count in the model architecture",
+              "Every checkpoint can switch without consequences"
+            ],
+            [
+              "Shorter retained history",
+              "Amount of state carried forward",
+              "Answer quality is unaffected by truncation"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "tradeoffs",
+        "title": "Quality is part of the budget",
+        "kind": "analysis",
+        "paragraphs": [
+          "If a system shortens conversation history to fit more concurrent requests, test whether it loses the facts and constraints required for later answers. If it compresses a prefix or quantizes its cache, include difficult retrieval and generation cases. Higher concurrency is not useful if the resulting answers or interaction times fail the product’s requirements.",
+          "Our recommendation is to publish a capacity envelope: model and precision, prompt/output distributions, arrival pattern, hardware, concurrency range, and latency/quality limits. A single “users per GPU” figure leaves out the conditions that make it meaningful."
+        ],
+        "refs": []
+      },
+      {
+        "id": "limits",
+        "title": "What the numbers mean",
+        "kind": "limitations",
+        "paragraphs": [
+          "The cache figures are exact arithmetic under stated assumptions and are reproduced by the downloadable program. They are not GPU measurements. No serving throughput, production concurrency, or model-quality result was measured in this analysis."
+        ],
+        "refs": []
+      }
+    ],
+    "sources": [
+      {
+        "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+        "url": "https://arxiv.org/abs/2205.14135",
+        "by": "Dao et al.",
+        "year": "2022"
+      },
+      {
+        "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+        "url": "https://arxiv.org/abs/2309.06180",
+        "by": "Kwon et al.",
+        "year": "2023"
+      },
+      {
+        "title": "GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints",
+        "url": "https://arxiv.org/abs/2305.13245",
+        "by": "Ainslie et al.",
+        "year": "2023"
+      },
+      {
+        "title": "Paged Attention implementation notes",
+        "url": "https://docs.vllm.ai/en/latest/design/paged_attention/",
+        "by": "vLLM maintainers",
+        "year": "Living documentation"
+      }
+    ],
+    "related": [
+      "grpo-efficiency-beyond-the-kernel",
+      "rag-evidence-before-confidence",
+      "coding-agents-beyond-a-leaderboard"
+    ],
+    "date": "2026-10-20",
+    "author": "WEBSPACEAI Research Desk",
+    "format": "Research analysis",
+    "reviewed": "20 October 2026",
+    "type": "research",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "inside-the-webspaceai-trust-center",
+    "title": "Inside the WEBSPACEAI Trust Center",
+    "subtitle": "A reader’s guide to the policy directory, its cross-references, and the questions the documents are intended to answer.",
+    "category": "Company",
+    "art": "policies",
+    "summary": [
+      "Find the policy relevant to a concrete question, rather than relying on a broad assurance.",
+      "Published commitments and evidence of their implementation are different things.",
+      "The directory links legal, safety, governance, and enterprise documents."
+    ],
+    "date": "2026-10-20",
+    "reviewed": "20 October 2026",
+    "author": "WEBSPACEAI Editorial",
+    "format": "Company explainer",
+    "type": "company",
+    "related": [
+      "how-our-safety-risk-levels-work",
+      "prompt-injection-permission-boundaries",
+      "rag-evidence-before-confidence"
+    ],
+    "sources": [
+      {
+        "title": "WEBSPACEAI Trust Center",
+        "url": "/trust",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      },
+      {
+        "title": "Policy directory",
+        "url": "/trust/policies",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      },
+      {
+        "title": "Privacy Policy",
+        "url": "/trust/policies/01-privacy-policy",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      },
+      {
+        "title": "Incident Disclosure Policy",
+        "url": "/trust/policies/33-incident-disclosure-policy",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      }
+    ],
+    "sections": [
+      {
+        "id": "guide",
+        "title": "A place to inspect the details",
+        "kind": "company",
+        "paragraphs": [
+          "The Trust Center brings WEBSPACEAI’s policy material into one navigable directory. It covers legal agreements, AI safety, governance and evaluation, and enterprise trust. The purpose of this guide is to help readers locate the document relevant to a question—not to replace the documents or imply that publication itself proves compliance. [1, 2]"
+        ],
+        "refs": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": "questions",
+        "title": "Start with the question you need answered",
+        "kind": "company",
+        "paragraphs": [
+          "For a question about personal information, begin with the Privacy Policy, then follow the references relevant to the particular service or relationship. For an incident or concern about how an incident should be disclosed, start with the Incident Disclosure Policy. A directory is useful when it takes someone from a broad subject to a specific process and a responsible contact. [3, 4]",
+          "Read the scope, definitions, effective date, reporting route, and exceptions of the applicable document. Two documents can address the same topic from different roles or contexts. The cross-reference links are intended to make those relationships easier to inspect."
+        ],
+        "refs": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "reading",
+        "title": "Commitments should be read precisely",
+        "kind": "company",
+        "paragraphs": [
+          "A policy can describe what an organization commits to do, who is responsible, and how an issue should be escalated. Evidence that those commitments have been implemented is a separate matter. An audit result, a measured safety evaluation, or a product-specific disclosure should be evaluated on its own supporting material.",
+          "For that reason, this newsroom will distinguish policy explainers from product announcements and research results. This article describes the documents currently available on the website; it does not announce a new certification, completed audit, or newly released service."
+        ],
+        "refs": []
+      },
+      {
+        "id": "next",
+        "title": "Keep the source document close",
+        "kind": "company",
+        "paragraphs": [
+          "Use the directory to search and filter policies, and follow the related-document links when a question crosses subjects. If a summary and an applicable policy differ, inspect the full document and its version rather than treating the shorter summary as the governing text. [2]",
+          "This explainer is based on the website’s policy suite. It is not an adaptation of an independently verified Threads post."
+        ],
+        "refs": [
+          2
+        ]
+      }
+    ],
+    "readingMinutes": 3
+  },
+  {
+    "slug": "how-our-safety-risk-levels-work",
+    "title": "How our safety risk levels work",
+    "subtitle": "The published AI Safety Framework describes four risk levels. Here is how to read the escalation and release controls without confusing a policy with a test result.",
+    "category": "Company",
+    "art": "framework",
+    "summary": [
+      "The source policy defines four levels: minimal, moderate, high, and critical risk.",
+      "Controls and release authority escalate with the assigned level.",
+      "A risk classification does not by itself prove that a system is safe."
+    ],
+    "date": "2026-10-20",
+    "reviewed": "20 October 2026",
+    "author": "WEBSPACEAI Editorial",
+    "format": "Company explainer",
+    "type": "company",
+    "related": [
+      "inside-the-webspaceai-trust-center",
+      "prompt-injection-permission-boundaries",
+      "coding-agents-beyond-a-leaderboard"
+    ],
+    "sources": [
+      {
+        "title": "AI Safety Framework, document 24",
+        "url": "/trust/policies/24-ai-safety-framework",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      },
+      {
+        "title": "Safety Evaluation Policy",
+        "url": "/trust/policies/17-safety-evaluation-policy",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      },
+      {
+        "title": "Red Teaming Policy",
+        "url": "/trust/policies/18-red-teaming-policy",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      },
+      {
+        "title": "Human Oversight Policy",
+        "url": "/trust/policies/23-human-oversight-policy",
+        "by": "WEBSPACEAI published policy suite",
+        "year": "Document content reviewed 20 October 2026"
+      }
+    ],
+    "sections": [
+      {
+        "id": "source",
+        "title": "What the source actually says",
+        "kind": "company",
+        "paragraphs": [
+          "The AI Safety Framework currently published in the policy suite defines four levels. Level 1 is minimal risk, Level 2 moderate risk, Level 3 high risk, and Level 4 critical risk. This explainer follows that source rather than the earlier five-level wording on the homepage. [1]",
+          "The framework describes a progression of evaluation, review, access restrictions, and release controls. These are policy requirements. Assigning a level is not a substitute for the supporting assessment, and a description of a required control is not evidence that a particular product has passed it."
+        ],
+        "refs": [
+          1
+        ]
+      },
+      {
+        "id": "levels",
+        "title": "How the controls escalate",
+        "kind": "company",
+        "paragraphs": [
+          "The source describes standard evaluation and product-level approval at Level 1; fuller safety evaluation and internal red teaming at Level 2; external red teaming, restricted access, and governance approval at Level 3; and a paused release pending mitigation with heightened approval requirements at Level 4. See the complete policy for its conditions and review cadence. [1]"
+        ],
+        "refs": [
+          1
+        ],
+        "table": {
+          "columns": [
+            "Level",
+            "Classification in the policy",
+            "Illustrative control summary"
+          ],
+          "rows": [
+            [
+              "1",
+              "Minimal risk",
+              "Standard evaluation and product-level approval"
+            ],
+            [
+              "2",
+              "Moderate risk",
+              "Fuller evaluation and internal red teaming"
+            ],
+            [
+              "3",
+              "High risk",
+              "External red teaming, restricted access and governance review"
+            ],
+            [
+              "4",
+              "Critical risk",
+              "Release paused pending mitigation and heightened approval"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "evidence",
+        "title": "The evidence behind a decision matters",
+        "kind": "company",
+        "paragraphs": [
+          "A meaningful release decision needs to connect the intended use of a system with its evaluated capabilities and risks. The related Safety Evaluation, Red Teaming, and Human Oversight policies describe further parts of that process. A reader should look for what was tested, under which conditions, what failed, and who is responsible for follow-up. [2, 3, 4]",
+          "An evaluation report can support a bounded conclusion. It should not be stretched into a claim that a model is safe for every environment or that all future risks have been eliminated. The same care applies when reading a concise company update."
+        ],
+        "refs": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "id": "scope",
+        "title": "A clarification, not a new evaluation result",
+        "kind": "company",
+        "paragraphs": [
+          "This article clarifies the policy currently presented on the website. It does not report a completed safety assessment, assign a risk level to a new model, or announce a release approval. The full documents remain the appropriate place to inspect scope, exceptions, responsibilities, and reporting routes.",
+          "This is a policy-based company explainer, not a verified import from Threads."
+        ],
+        "refs": []
+      }
+    ],
+    "readingMinutes": 3
+  }
+]
